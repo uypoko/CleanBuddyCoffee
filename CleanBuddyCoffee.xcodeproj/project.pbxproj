@@ -7,14 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0965360E60C9950A2EF0FC27 /* ListDrinksPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85FEB08BFE306EEBFDE05DE /* ListDrinksPresenter.swift */; };
-		213EBEFC6996A961A929C7D7 /* ListDrinksConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501FF0F349EEED13199A3CAE /* ListDrinksConfigurator.swift */; };
-		25319C6108C4169255C6C4C8 /* ListDrinksModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A95BCA458AEFF4AA8E1E12 /* ListDrinksModuleInput.swift */; };
-		2E748F4EF27C5307DD14140F /* ListDrinksInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAB269F8F95F4ABA5AB8383 /* ListDrinksInteractorInput.swift */; };
-		30C67117E7770AD513D65A8A /* ListDrinksInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6B504532C6B79718DFA121 /* ListDrinksInteractor.swift */; };
-		4A561AB6BC286ECAE00A09D9 /* ListDrinksInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6067ECD3FBCC0EC08653E448 /* ListDrinksInteractorOutput.swift */; };
 		7FD201E4EA2D01E28B92EFB3 /* Pods_CleanBuddyCoffee.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44985D331732E997F26520B /* Pods_CleanBuddyCoffee.framework */; };
-		825E2DB3F149C4480C218A6C /* ListDrinksRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F423B24F9C6223F099EA1E7 /* ListDrinksRouterInput.swift */; };
 		9490DD17230566A7006A03E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9490DD16230566A7006A03E8 /* AppDelegate.swift */; };
 		9490DD1E230566A8006A03E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9490DD1D230566A8006A03E8 /* Assets.xcassets */; };
 		9490DD21230566A8006A03E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9490DD1F230566A8006A03E8 /* LaunchScreen.storyboard */; };
@@ -39,25 +32,12 @@
 		9490DD5923057411006A03E8 /* ListDrinksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9490DD5823057411006A03E8 /* ListDrinksModel.swift */; };
 		9490DD5F230575EB006A03E8 /* DrinkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9490DD5E230575EB006A03E8 /* DrinkService.swift */; };
 		9490DD6723057636006A03E8 /* Drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9490DD6323057636006A03E8 /* Drink.swift */; };
-		9A082F389898B507BED00E7F /* ListDrinksInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B28A81B1C3B6BB83F1862E1 /* ListDrinksInitializer.swift */; };
-		AF6210997D07DEC17C505B13 /* ListDrinksRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B4AEF33A97F08F38E0BB8E /* ListDrinksRouter.swift */; };
-		B08A78D1A176741979408F88 /* ListDrinksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF48B74289E2DEF8872D74F0 /* ListDrinksViewController.swift */; };
-		D79147E4DBD6B342FA66031B /* ListDrinksViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC748A7A2A02A4BECE495B6 /* ListDrinksViewOutput.swift */; };
-		F45C9788D2CCCB3AF825CC53 /* ListDrinksViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FDAB6B371DA85B72196219 /* ListDrinksViewInput.swift */; };
+		A48CC2522305AE240057000E /* DrinkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48CC2512305AE240057000E /* DrinkTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0A1A68DE6F5C05FEDB57D5C8 /* Pods-CleanBuddyCoffee.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CleanBuddyCoffee.debug.xcconfig"; path = "Target Support Files/Pods-CleanBuddyCoffee/Pods-CleanBuddyCoffee.debug.xcconfig"; sourceTree = "<group>"; };
-		3B28A81B1C3B6BB83F1862E1 /* ListDrinksInitializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ListDrinksInitializer.swift; sourceTree = "<group>"; };
-		3F423B24F9C6223F099EA1E7 /* ListDrinksRouterInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ListDrinksRouterInput.swift; sourceTree = "<group>"; };
-		48FDAB6B371DA85B72196219 /* ListDrinksViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ListDrinksViewInput.swift; sourceTree = "<group>"; };
-		501FF0F349EEED13199A3CAE /* ListDrinksConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ListDrinksConfigurator.swift; sourceTree = "<group>"; };
-		6067ECD3FBCC0EC08653E448 /* ListDrinksInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ListDrinksInteractorOutput.swift; sourceTree = "<group>"; };
 		68639226B61F5F192142EB2E /* Pods-CleanBuddyCoffee.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CleanBuddyCoffee.release.xcconfig"; path = "Target Support Files/Pods-CleanBuddyCoffee/Pods-CleanBuddyCoffee.release.xcconfig"; sourceTree = "<group>"; };
-		7DAB269F8F95F4ABA5AB8383 /* ListDrinksInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ListDrinksInteractorInput.swift; sourceTree = "<group>"; };
-		84A95BCA458AEFF4AA8E1E12 /* ListDrinksModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ListDrinksModuleInput.swift; sourceTree = "<group>"; };
-		88B4AEF33A97F08F38E0BB8E /* ListDrinksRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ListDrinksRouter.swift; sourceTree = "<group>"; };
-		8AC748A7A2A02A4BECE495B6 /* ListDrinksViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ListDrinksViewOutput.swift; sourceTree = "<group>"; };
 		9490DD13230566A7006A03E8 /* CleanBuddyCoffee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanBuddyCoffee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9490DD16230566A7006A03E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9490DD1D230566A8006A03E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -84,10 +64,8 @@
 		9490DD5823057411006A03E8 /* ListDrinksModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDrinksModel.swift; sourceTree = "<group>"; };
 		9490DD5E230575EB006A03E8 /* DrinkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkService.swift; sourceTree = "<group>"; };
 		9490DD6323057636006A03E8 /* Drink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Drink.swift; sourceTree = "<group>"; };
-		AF48B74289E2DEF8872D74F0 /* ListDrinksViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ListDrinksViewController.swift; sourceTree = "<group>"; };
+		A48CC2512305AE240057000E /* DrinkTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkTableViewCell.swift; sourceTree = "<group>"; };
 		D44985D331732E997F26520B /* Pods_CleanBuddyCoffee.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CleanBuddyCoffee.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DC6B504532C6B79718DFA121 /* ListDrinksInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ListDrinksInteractor.swift; sourceTree = "<group>"; };
-		F85FEB08BFE306EEBFDE05DE /* ListDrinksPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ListDrinksPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,48 +80,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		22957522151FB5F57F7703D2 /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				3F423B24F9C6223F099EA1E7 /* ListDrinksRouterInput.swift */,
-				88B4AEF33A97F08F38E0BB8E /* ListDrinksRouter.swift */,
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
-		41D548ABAB9705EF2B98202A /* View */ = {
-			isa = PBXGroup;
-			children = (
-				48FDAB6B371DA85B72196219 /* ListDrinksViewInput.swift */,
-				8AC748A7A2A02A4BECE495B6 /* ListDrinksViewOutput.swift */,
-				AF48B74289E2DEF8872D74F0 /* ListDrinksViewController.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		6EB9D7378F64F220A190351A /* Configurator */ = {
-			isa = PBXGroup;
-			children = (
-				501FF0F349EEED13199A3CAE /* ListDrinksConfigurator.swift */,
-				3B28A81B1C3B6BB83F1862E1 /* ListDrinksInitializer.swift */,
-			);
-			path = Configurator;
-			sourceTree = "<group>";
-		};
 		82F7B6E112079DEFEDE5E717 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				D44985D331732E997F26520B /* Pods_CleanBuddyCoffee.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		83D0BF40919085BFC2B8530E /* modules */ = {
-			isa = PBXGroup;
-			children = (
-				F9966C34AAEE4E0AC6C6764B /* ListDrinks */,
-			);
-			path = modules;
 			sourceTree = "<group>";
 		};
 		8AD55697FCA71AEB26E91105 /* Pods */ = {
@@ -162,7 +104,6 @@
 				9490DD14230566A7006A03E8 /* Products */,
 				8AD55697FCA71AEB26E91105 /* Pods */,
 				82F7B6E112079DEFEDE5E717 /* Frameworks */,
-				83D0BF40919085BFC2B8530E /* modules */,
 			);
 			sourceTree = "<group>";
 		};
@@ -224,6 +165,7 @@
 		9490DD2F23056F4C006A03E8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A48CC2512305AE240057000E /* DrinkTableViewCell.swift */,
 				9490DD3023056F4C006A03E8 /* ListDrinksViewOutput.swift */,
 				9490DD3123056F4C006A03E8 /* ListDrinksViewInput.swift */,
 				9490DD3223056F4C006A03E8 /* ListDrinksViewController.swift */,
@@ -300,37 +242,6 @@
 				9490DD6323057636006A03E8 /* Drink.swift */,
 			);
 			path = Entities;
-			sourceTree = "<group>";
-		};
-		BB28DEC5A3E2118A6FE46ED8 /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-				7DAB269F8F95F4ABA5AB8383 /* ListDrinksInteractorInput.swift */,
-				6067ECD3FBCC0EC08653E448 /* ListDrinksInteractorOutput.swift */,
-				DC6B504532C6B79718DFA121 /* ListDrinksInteractor.swift */,
-			);
-			path = Interactor;
-			sourceTree = "<group>";
-		};
-		BEA39174E31F86772B0E2DBD /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				84A95BCA458AEFF4AA8E1E12 /* ListDrinksModuleInput.swift */,
-				F85FEB08BFE306EEBFDE05DE /* ListDrinksPresenter.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		F9966C34AAEE4E0AC6C6764B /* ListDrinks */ = {
-			isa = PBXGroup;
-			children = (
-				41D548ABAB9705EF2B98202A /* View */,
-				BEA39174E31F86772B0E2DBD /* Presenter */,
-				BB28DEC5A3E2118A6FE46ED8 /* Interactor */,
-				22957522151FB5F57F7703D2 /* Router */,
-				6EB9D7378F64F220A190351A /* Configurator */,
-			);
-			path = ListDrinks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -451,35 +362,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				9490DD17230566A7006A03E8 /* AppDelegate.swift in Sources */,
-				F45C9788D2CCCB3AF825CC53 /* ListDrinksViewInput.swift in Sources */,
 				9490DD3E23056F4C006A03E8 /* ListDrinksPresenter.swift in Sources */,
-				D79147E4DBD6B342FA66031B /* ListDrinksViewOutput.swift in Sources */,
 				9490DD4223056F4C006A03E8 /* ListDrinksConfigurator.swift in Sources */,
-				B08A78D1A176741979408F88 /* ListDrinksViewController.swift in Sources */,
 				9490DD4823056F4C006A03E8 /* ListDrinksRouter.swift in Sources */,
-				25319C6108C4169255C6C4C8 /* ListDrinksModuleInput.swift in Sources */,
-				0965360E60C9950A2EF0FC27 /* ListDrinksPresenter.swift in Sources */,
 				9490DD4B23057095006A03E8 /* AppStoryboard.swift in Sources */,
 				9490DD3F23056F4C006A03E8 /* ListDrinksViewOutput.swift in Sources */,
-				2E748F4EF27C5307DD14140F /* ListDrinksInteractorInput.swift in Sources */,
 				9490DD53230570B9006A03E8 /* MainViewController.swift in Sources */,
 				9490DD4323056F4C006A03E8 /* ListDrinksInitializer.swift in Sources */,
 				9490DD3D23056F4C006A03E8 /* ListDrinksModuleInput.swift in Sources */,
-				4A561AB6BC286ECAE00A09D9 /* ListDrinksInteractorOutput.swift in Sources */,
 				9490DD5F230575EB006A03E8 /* DrinkService.swift in Sources */,
 				9490DD4023056F4C006A03E8 /* ListDrinksViewInput.swift in Sources */,
-				30C67117E7770AD513D65A8A /* ListDrinksInteractor.swift in Sources */,
 				9490DD5923057411006A03E8 /* ListDrinksModel.swift in Sources */,
 				9490DD4423056F4C006A03E8 /* ListDrinksInteractorInput.swift in Sources */,
 				9490DD4123056F4C006A03E8 /* ListDrinksViewController.swift in Sources */,
+				A48CC2522305AE240057000E /* DrinkTableViewCell.swift in Sources */,
 				9490DD4723056F4C006A03E8 /* ListDrinksRouterInput.swift in Sources */,
 				9490DD6723057636006A03E8 /* Drink.swift in Sources */,
-				825E2DB3F149C4480C218A6C /* ListDrinksRouterInput.swift in Sources */,
-				AF6210997D07DEC17C505B13 /* ListDrinksRouter.swift in Sources */,
-				213EBEFC6996A961A929C7D7 /* ListDrinksConfigurator.swift in Sources */,
 				9490DD52230570B9006A03E8 /* MainBuilder.swift in Sources */,
 				9490DD4523056F4C006A03E8 /* ListDrinksInteractorOutput.swift in Sources */,
-				9A082F389898B507BED00E7F /* ListDrinksInitializer.swift in Sources */,
 				9490DD4623056F4C006A03E8 /* ListDrinksInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

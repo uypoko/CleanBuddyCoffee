@@ -8,6 +8,14 @@
 
 import Foundation
 
-struct Product {
-    let name: String
+enum ListDrinks {
+    
+    struct ProductResponse {
+        let name: String
+    }
+    
+    struct ProductViewModel {
+        let name: String
+    }
+    
 }

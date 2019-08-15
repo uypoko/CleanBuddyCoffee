@@ -33,4 +33,16 @@ class DrinkService {
             }
         }
     }
+    
+    func fetchDrinkImage(drinkName: String, completion: @escaping (Data?) -> Void) {
+        let imgRef = storageRef.child("drink_images/\(drinkName).jpg")
+        imgRef.getData(maxSize: 1 * 1024 * 1024) { data, _ in
+            if let data = data {
+                completion(data)
+            } else {
+                completion(nil)
+            }
+        }
+    }
+    
 }

@@ -10,13 +10,14 @@ class ListDrinksInteractor: ListDrinksInteractorInput {
 
     weak var output: ListDrinksInteractorOutput!
     var service: DrinkService?
+    
 
     func fetchProducts() {
-        var products: [Product] = []
+        var products: [ListDrinks.ProductResponse] = []
         service?.fetchDrinks { drinks in
             if let drinks = drinks {
                 for drink in drinks {
-                    let product = Product(name: drink.name)
+                    let product = ListDrinks.ProductResponse(name: drink.name)
                     products.append(product)
                 }
                 self.output.didFetchDrinks(products: products)

@@ -9,5 +9,5 @@
 import Foundation
 
 protocol ListDrinksInteractorOutput: class {
-    func didFetchDrinks(products: [Product])
+    func didFetchDrinks(products: [ListDrinks.ProductResponse])
 }

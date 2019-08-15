@@ -14,5 +14,5 @@ protocol ListDrinksViewInput: class {
     */
 
     func setupInitialState()
-    func displayProducts(with products: [Product])
+    func displayProducts(with products: [ListDrinks.ProductViewModel])
 }

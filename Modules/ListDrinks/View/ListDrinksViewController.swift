@@ -11,7 +11,7 @@ import UIKit
 class ListDrinksViewController: UITableViewController, ListDrinksViewInput {
 
     var output: ListDrinksViewOutput!
-    var products: [Product] = []
+    var products: [ListDrinks.ProductViewModel] = []
 
     // MARK: Life cycle
     override func viewDidLoad() {
@@ -38,7 +38,7 @@ class ListDrinksViewController: UITableViewController, ListDrinksViewInput {
         return cell
     }
     
-    func displayProducts(with products: [Product]) {
+    func displayProducts(with products: [ListDrinks.ProductViewModel]) {
         self.products = products
         tableView.reloadData()
     }
