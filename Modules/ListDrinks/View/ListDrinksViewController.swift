@@ -46,6 +46,8 @@ class ListDrinksViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let drink = drinks[indexPath.row]
+        output.didSelectRow(drinkId: drink.id)
         tableView.deselectRow(at: indexPath, animated: true)
     }
     

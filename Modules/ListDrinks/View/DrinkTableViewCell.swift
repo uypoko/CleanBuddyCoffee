@@ -27,7 +27,7 @@ class DrinkTableViewCell: UITableViewCell {
     
     func updateUI(withDrink drink: ListDrinks.DrinkViewModel) {
         drinkNameLabel.text = drink.name
-        priceLabel.text = "\(drink.price) đ"
+        priceLabel.text = drink.price
     }
     
     func setImage(data: Data) {

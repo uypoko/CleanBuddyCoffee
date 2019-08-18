@@ -1,24 +1,20 @@
 //
-//  ListDrinksModel.swift
+//  DrinkDetailViewModel.swift
 //  CleanBuddyCoffee
 //
-//  Created by Ryan on 8/15/19.
+//  Created by Uy Cung Dinh on 8/18/19.
 //  Copyright © 2019 Daylighter. All rights reserved.
 //
 
 import Foundation
 
-enum ListDrinks {
+enum DrinkDetail {
     
     struct DrinkViewModel {
         let id: String
         let name: String
+        let description: String
         let price: String
-    }
-    
-    struct DrinkImageViewModel {
-        let name: String
-        let data: Data
     }
     
 }

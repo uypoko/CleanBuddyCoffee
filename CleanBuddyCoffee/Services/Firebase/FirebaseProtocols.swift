@@ -14,3 +14,10 @@ protocol ListDrinksService {
     func fetchDrinkImage(drinkName: String, completion: @escaping (Data?) -> Void)
     
 }
+
+protocol DrinkDetailService {
+    
+    func fetchDrink(for id: String, completion: @escaping (DrinkDetail.Drink?) -> Void)
+    func fetchDrinkDetailImage(drinkId: String, completion: @escaping (Data?) -> Void)
+    
+}

@@ -16,5 +16,6 @@ protocol ListDrinksViewOutput {
 
     func viewIsReady()
     func drinkCellDequeued(drinkName: String)
+    func didSelectRow(drinkId: String)
     
 }

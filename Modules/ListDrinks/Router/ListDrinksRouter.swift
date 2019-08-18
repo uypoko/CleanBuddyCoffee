@@ -7,5 +7,13 @@
 //
 
 class ListDrinksRouter: ListDrinksRouterInput {
+    
+    weak var sourceView: ListDrinksViewController!
+    
+    func routeToDrinkDetail(drinkId: String) {
+        let view = DrinkDetailViewController.instantiate(fromAppStoryboard: .DrinkDetail)
+        DrinkDetailModuleConfigurator().configureModuleForViewInput(viewInput: view, drinkId: drinkId)
+        sourceView.navigationController?.pushViewController(view, animated: true)
+    }
 
 }

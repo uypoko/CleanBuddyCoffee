@@ -44,3 +44,34 @@ class DrinkService: ListDrinksService {
     }
     
 }
+
+extension DrinkService: DrinkDetailService {
+    
+    func fetchDrink(for id: String, completion: @escaping (DrinkDetail.Drink?) -> Void) {
+        db.collection("drinks").document(id).getDocument { snapshot, _ in
+            if let snapshot = snapshot, let data = snapshot.data() {
+                let name = (data["name"] as? String) ?? ""
+                let description = (data["description"] as? String) ?? ""
+                let price = (data["price"] as? Int) ?? 0
+                let drink = DrinkDetail.Drink(id: id, name: name, description: description, price: price)
+                completion(drink)
+            } else {
+                completion(nil)
+            }
+        }
+    }
+    
+    func fetchDrinkDetailImage(drinkId: String, completion: @escaping (Data?) -> Void) {
+        let imgRef = storageRef.child("drink_images/\(drinkId).jpg")
+        print("id: \(drinkId)")
+        imgRef.getData(maxSize: 5 * 1024 * 1024) { data, _ in
+            if let data = data {
+                completion(data)
+            } else {
+                print("image error")
+                completion(nil)
+            }
+        }
+    }
+    
+}

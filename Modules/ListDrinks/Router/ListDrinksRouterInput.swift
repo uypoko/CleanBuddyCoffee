@@ -9,5 +9,7 @@
 import Foundation
 
 protocol ListDrinksRouterInput {
-
+    
+    func routeToDrinkDetail(drinkId: String)
+    
 }

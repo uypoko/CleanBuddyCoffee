@@ -13,7 +13,7 @@ enum AppStoryboard : String {
     
     case Main
     case ListDrinks
-    case ShowProductDetail
+    case DrinkDetail
     
     var instance : UIStoryboard {
         

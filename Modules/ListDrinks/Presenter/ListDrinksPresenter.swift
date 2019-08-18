@@ -24,6 +24,10 @@ extension ListDrinksPresenter: ListDrinksViewOutput {
         interactor.fetchImage(drinkName: drinkName)
     }
     
+    func didSelectRow(drinkId: String) {
+        router.routeToDrinkDetail(drinkId: drinkId)
+    }
+    
 }
 
 extension ListDrinksPresenter: ListDrinksInteractorOutput {
@@ -31,7 +35,7 @@ extension ListDrinksPresenter: ListDrinksInteractorOutput {
     func didFetchDrinks(drinks: [ListDrinks.Drink]) {
         var viewModels: [ListDrinks.DrinkViewModel] = []
         for rawDrink in drinks {
-            let drink = ListDrinks.DrinkViewModel(name: rawDrink.name, price: "\(rawDrink.price)")
+            let drink = ListDrinks.DrinkViewModel(id: rawDrink.id, name: rawDrink.name, price: "\(rawDrink.price) đ")
             viewModels.append(drink)
         }
         view.displayProducts(with: viewModels)

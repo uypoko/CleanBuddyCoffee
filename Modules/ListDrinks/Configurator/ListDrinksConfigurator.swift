@@ -20,6 +20,7 @@ class ListDrinksModuleConfigurator {
     private func configure(viewController: ListDrinksViewController) {
 
         let router = ListDrinksRouter()
+        router.sourceView = viewController
 
         let presenter = ListDrinksPresenter()
         presenter.view = viewController

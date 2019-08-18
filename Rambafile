@@ -10,10 +10,10 @@ xcodeproj_path: CleanBuddyCoffee.xcodeproj
 project_target: CleanBuddyCoffee
 
 # The file path for new modules
-project_file_path: modules
+project_file_path: Modules
 
 # The Xcode group path to new modules
-project_group_path: modules
+project_group_path: Modules
 
 ### Dependencies settings section
 podfile_path: Podfile

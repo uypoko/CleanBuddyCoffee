@@ -12,8 +12,8 @@ extension ListDrinks {
     
     struct Drink: Equatable {
         let id: String
-        var name: String
-        var price: Int
+        let name: String
+        let price: Int
         
         static func ==(lhs: Drink, rhs: Drink) -> Bool {
             return lhs.id == rhs.id
@@ -22,4 +22,13 @@ extension ListDrinks {
     
 }
 
-
+extension DrinkDetail {
+    
+    struct Drink {
+        let id: String
+        let name: String
+        let description: String
+        let price: Int
+    }
+    
+}
