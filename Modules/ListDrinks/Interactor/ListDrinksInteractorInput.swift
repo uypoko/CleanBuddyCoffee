@@ -10,5 +10,7 @@ import Foundation
 
 protocol ListDrinksInteractorInput {
 
-    func fetchProducts()
+    func fetchDrinks()
+    func fetchImage(drinkName: String)
+    
 }

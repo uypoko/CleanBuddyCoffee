@@ -9,19 +9,22 @@
 class ListDrinksInteractor: ListDrinksInteractorInput {
 
     weak var output: ListDrinksInteractorOutput!
-    var service: DrinkService?
-    
+    var service: ListDrinksService?
 
-    func fetchProducts() {
-        var products: [ListDrinks.ProductResponse] = []
+    func fetchDrinks() {
         service?.fetchDrinks { drinks in
             if let drinks = drinks {
-                for drink in drinks {
-                    let product = ListDrinks.ProductResponse(name: drink.name)
-                    products.append(product)
-                }
-                self.output.didFetchDrinks(products: products)
+                self.output.didFetchDrinks(drinks: drinks)
             }
         }
     }
+    
+    func fetchImage(drinkName: String) {
+        service?.fetchDrinkImage(drinkName: drinkName) { data in
+            if let data = data {
+                self.output.didFetchImage(for: drinkName, data: data)
+            }
+        }
+    }
+    
 }

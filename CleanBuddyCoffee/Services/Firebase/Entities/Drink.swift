@@ -8,15 +8,18 @@
 
 import Foundation
 
-struct Drink: Equatable {
-    let id: String
-    var name: String
-    var category: String
-    var price: Int
-    var description: String
-    var imageData: Data?
+extension ListDrinks {
     
-    static func ==(lhs: Drink, rhs: Drink) -> Bool {
-        return lhs.id == rhs.id
+    struct Drink: Equatable {
+        let id: String
+        var name: String
+        var price: Int
+        
+        static func ==(lhs: Drink, rhs: Drink) -> Bool {
+            return lhs.id == rhs.id
+        }
     }
+    
 }
+
+

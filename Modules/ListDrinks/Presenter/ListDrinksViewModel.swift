@@ -10,12 +10,14 @@ import Foundation
 
 enum ListDrinks {
     
-    struct ProductResponse {
+    struct DrinkViewModel {
         let name: String
+        let price: String
     }
     
-    struct ProductViewModel {
+    struct DrinkImageViewModel {
         let name: String
+        let data: Data
     }
     
 }

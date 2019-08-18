@@ -25,9 +25,13 @@ class DrinkTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func updateUI(withDrink drink: Drink) {
+    func updateUI(withDrink drink: ListDrinks.DrinkViewModel) {
         drinkNameLabel.text = drink.name
         priceLabel.text = "\(drink.price) đ"
+    }
+    
+    func setImage(data: Data) {
+        drinkImageView.image = UIImage(data: data)
     }
     
 }
