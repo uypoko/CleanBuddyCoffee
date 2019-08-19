@@ -63,15 +63,35 @@ extension DrinkService: DrinkDetailService {
     
     func fetchDrinkDetailImage(drinkId: String, completion: @escaping (Data?) -> Void) {
         let imgRef = storageRef.child("drink_images/\(drinkId).jpg")
-        print("id: \(drinkId)")
         imgRef.getData(maxSize: 5 * 1024 * 1024) { data, _ in
             if let data = data {
                 completion(data)
             } else {
-                print("image error")
                 completion(nil)
             }
         }
     }
+    
+}
+
+extension DrinkService: CartNetworkService {
+    func fetchDrinks(drinkIds: [String], completion: @escaping ([Cart.FetchedItem]?) -> Void) {
+        var cartItems: [Cart.FetchedItem] = []
+        for id in drinkIds {
+            db.collection("drinks").document(id).getDocument { snapshot, _ in
+                if let snapshot = snapshot, let data = snapshot.data() {
+                    let name = (data["name"] as? String) ?? ""
+                    guard let priceData = data["price"], let price = priceData as? Int else { return }
+                    let item = Cart.FetchedItem(id: id, name: name, price: price)
+                    cartItems.append(item)
+                    completion(cartItems)
+                } else {
+                    completion(nil)
+                }
+            }
+        }
+        
+    }
+    
     
 }

@@ -10,6 +10,13 @@ import Foundation
 
 enum DrinkDetail {
     
+    struct Drink {
+        let id: String
+        let name: String
+        let description: String
+        let price: Int
+    }
+    
     struct DrinkViewModel {
         let id: String
         let name: String

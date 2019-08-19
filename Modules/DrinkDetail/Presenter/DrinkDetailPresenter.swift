@@ -13,9 +13,15 @@ class DrinkDetailPresenter: DrinkDetailModuleInput, DrinkDetailViewOutput {
     var interactor: DrinkDetailInteractorInput!
     var router: DrinkDetailRouterInput!
 
-    func viewIsReady() {
-
+    func viewIsReady(drinkId: String) {
+        interactor.fetchDrink(drinkId: drinkId)
+        interactor.fetchDrinkImage(drinkId: drinkId)
     }
+    
+    func addToCart(drinkId: String, quantity: Int) {
+        interactor.addToCart(drinkId: drinkId, quantity: quantity)
+    }
+    
 }
 
 extension DrinkDetailPresenter: DrinkDetailInteractorOutput {

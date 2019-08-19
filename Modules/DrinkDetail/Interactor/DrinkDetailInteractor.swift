@@ -9,10 +9,11 @@
 class DrinkDetailInteractor: DrinkDetailInteractorInput {
 
     weak var output: DrinkDetailInteractorOutput!
-    var service: DrinkDetailService?
+    var networkService: DrinkDetailService?
+    var cartService: DrinkDetailModuleCodableCartService?
     
     func fetchDrink(drinkId: String) {
-        service?.fetchDrink(for: drinkId) { [weak self] drink in
+        networkService?.fetchDrink(for: drinkId) { [weak self] drink in
             if let drink = drink {
                 self?.output.didFetchDrink(drink: drink)
             }
@@ -20,11 +21,15 @@ class DrinkDetailInteractor: DrinkDetailInteractorInput {
     }
     
     func fetchDrinkImage(drinkId: String) {
-        service?.fetchDrinkDetailImage(drinkId: drinkId) { [weak self] data in
+        networkService?.fetchDrinkDetailImage(drinkId: drinkId) { [weak self] data in
             if let data = data {
                 self?.output.didFetchDrinkImage(data: data)
             }
         }
+    }
+    
+    func addToCart(drinkId: String, quantity: Int) {
+        cartService?.addItem(drinkId: drinkId, quantity: quantity)
     }
     
 }

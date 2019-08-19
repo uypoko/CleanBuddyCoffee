@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct DrinkDetailModuleConfigurator {
+class DrinkDetailModuleConfigurator {
 
     func configureModuleForViewInput<UIViewController>(viewInput: UIViewController, drinkId: String) {
 
@@ -18,7 +18,7 @@ struct DrinkDetailModuleConfigurator {
     }
 
     private func configure(viewController: DrinkDetailViewController, drinkId: String) {
-
+        viewController.drinkId = drinkId
         let router = DrinkDetailRouter()
 
         let presenter = DrinkDetailPresenter()
@@ -28,9 +28,9 @@ struct DrinkDetailModuleConfigurator {
         let interactor = DrinkDetailInteractor()
         interactor.output = presenter
         let service: DrinkDetailService = DrinkService()
-        interactor.service = service
-        interactor.fetchDrink(drinkId: drinkId)
-        interactor.fetchDrinkImage(drinkId: drinkId)
+        interactor.networkService = service
+        let cartService: DrinkDetailModuleCodableCartService =  CartCodableService()
+        interactor.cartService =  cartService
         
         presenter.interactor = interactor
         viewController.output = presenter

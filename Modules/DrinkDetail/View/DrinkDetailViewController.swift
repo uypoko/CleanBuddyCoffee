@@ -11,6 +11,7 @@ import UIKit
 class DrinkDetailViewController: UIViewController {
 
     var output: DrinkDetailViewOutput!
+    var drinkId: String?
 
     // MARK: IBOutlets
     @IBOutlet weak var drinkImageView: UIImageView!
@@ -23,9 +24,27 @@ class DrinkDetailViewController: UIViewController {
     // MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        output.viewIsReady()
+        if let drinkId = drinkId {
+            output.viewIsReady(drinkId: drinkId)
+        }
     }
 
+    // MARK: IBACtions
+    @IBAction func stepperValueChanged(_ sender: Any) {
+        let quantity = Int(stepper.value)
+        quantityLabel.text = "\(quantity)"
+    }
+    
+    @IBAction func addToCartButtonTapped(_ sender: UIButton) {
+        let quantity = Int(stepper.value)
+        guard let drinkId = drinkId, quantity > 0 else { return }
+        UIView.animate(withDuration: 0.25) {
+            sender.transform = CGAffineTransform(scaleX: 3.0, y: 3.0)
+            sender.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+        }
+        output.addToCart(drinkId: drinkId, quantity: quantity)
+    }
+    
 }
 
 extension DrinkDetailViewController: DrinkDetailViewInput {

@@ -12,5 +12,5 @@ protocol DrinkDetailInteractorInput {
 
     func fetchDrink(drinkId: String)
     func fetchDrinkImage(drinkId: String)
-    
+    func addToCart(drinkId: String, quantity: Int)
 }

@@ -14,6 +14,7 @@ enum AppStoryboard : String {
     case Main
     case ListDrinks
     case DrinkDetail
+    case Cart
     
     var instance : UIStoryboard {
         

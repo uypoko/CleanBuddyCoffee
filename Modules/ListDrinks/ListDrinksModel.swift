@@ -1,14 +1,14 @@
 //
-//  Drink.swift
-//  BuddyCoffee
+//  ListDrinksModel.swift
+//  CleanBuddyCoffee
 //
-//  Created by Uy Cung Dinh on 7/3/19.
-//  Copyright © 2019 Equity. All rights reserved.
+//  Created by Ryan on 8/15/19.
+//  Copyright © 2019 Daylighter. All rights reserved.
 //
 
 import Foundation
 
-extension ListDrinks {
+enum ListDrinks {
     
     struct Drink: Equatable {
         let id: String
@@ -20,15 +20,15 @@ extension ListDrinks {
         }
     }
     
-}
-
-extension DrinkDetail {
-    
-    struct Drink {
+    struct DrinkViewModel {
         let id: String
         let name: String
-        let description: String
-        let price: Int
+        let price: String
+    }
+    
+    struct DrinkImageViewModel {
+        let name: String
+        let data: Data
     }
     
 }

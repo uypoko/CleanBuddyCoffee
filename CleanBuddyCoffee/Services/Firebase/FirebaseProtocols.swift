@@ -21,3 +21,7 @@ protocol DrinkDetailService {
     func fetchDrinkDetailImage(drinkId: String, completion: @escaping (Data?) -> Void)
     
 }
+
+protocol CartNetworkService {
+    func fetchDrinks(drinkIds: [String], completion: @escaping ([Cart.FetchedItem]?) -> Void)
+}

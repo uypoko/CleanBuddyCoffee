@@ -45,7 +45,7 @@
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="3IU-td-9Df">
                                 <rect key="frame" x="36" y="833" width="94" height="29"/>
                                 <connections>
-                                    <action selector="stepperValueChanged:" destination="Odq-yc-DHR" eventType="valueChanged" id="FC4-MX-mjM"/>
+                                    <action selector="stepperValueChanged:" destination="Odq-yc-DHR" eventType="valueChanged" id="aPd-Yx-bW0"/>
                                 </connections>
                             </stepper>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Av-Ki-6wO">
@@ -55,7 +55,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="addToCartButtonTapped:" destination="Odq-yc-DHR" eventType="touchUpInside" id="p0t-2Q-4N0"/>
+                                    <action selector="addToCartButtonTapped:" destination="Odq-yc-DHR" eventType="touchUpInside" id="2Sp-Ix-StG"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQf-QH-kgX">

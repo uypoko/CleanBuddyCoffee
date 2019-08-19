@@ -13,5 +13,6 @@ protocol DrinkDetailViewOutput {
         Notify presenter that view is ready
     */
 
-    func viewIsReady()
+    func viewIsReady(drinkId: String)
+    func addToCart(drinkId: String, quantity: Int)
 }
