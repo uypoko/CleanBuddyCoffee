@@ -27,9 +27,9 @@ class CartModuleConfigurator {
 
         let interactor = CartInteractor()
         interactor.output = presenter
-        let codableService = CartCodableService()
+        let codableService = CartLocalService()
         interactor.codableService = codableService
-        let networkService = DrinkService()
+        let networkService = MenuNetworkService()
         interactor.networkService = networkService
 
         presenter.interactor = interactor

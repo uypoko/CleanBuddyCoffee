@@ -27,9 +27,9 @@ class DrinkDetailModuleConfigurator {
 
         let interactor = DrinkDetailInteractor()
         interactor.output = presenter
-        let service: DrinkDetailService = DrinkService()
+        let service: DrinkDetailService = MenuNetworkService()
         interactor.networkService = service
-        let cartService: DrinkDetailModuleCodableCartService =  CartCodableService()
+        let cartService: DrinkDetailModuleCodableCartService =  CartLocalService()
         interactor.cartService =  cartService
         
         presenter.interactor = interactor

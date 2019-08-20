@@ -20,14 +20,24 @@ class CartInteractor: CartInteractorInput {
         }
         networkService?.fetchDrinks(drinkIds: ids) { fetchedItems in
             guard let fetchedItems = fetchedItems else { return }
-            var items: [Cart.Item] = []
+            var items: [Cart.ItemViewModel] = []
             for fetchedItem in fetchedItems {
                 let quantity = cartItems.first(where: {$0.id == fetchedItem.id})!.quantity
-                let item = Cart.Item(id: fetchedItem.id, name: fetchedItem.name, quatity: quantity, price: fetchedItem.price)
+                let item = Cart.ItemViewModel(id: fetchedItem.id, name: fetchedItem.name, quantity: quantity, price: fetchedItem.price)
                 items.append(item)
             }
             self.output.didFetchCartItems(items: items)
         }
+    }
+    
+    func deleteItem(id: String) {
+        codableService.removeItem(drinkId: id)
+        output.didDeleteItem(id: id)
+    }
+    
+    func changeItemQuantity(itemId: String, quantity: Int) {
+        codableService.changeItemQuantity(drinkId: itemId, quantity: quantity)
+        output.didChangeItemQuantity(itemId: itemId, quantity: quantity)
     }
     
 }

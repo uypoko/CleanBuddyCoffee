@@ -14,4 +14,6 @@ protocol CartViewOutput {
     */
 
     func viewIsReady()
+    func deleteItem(id: String)
+    func changeItemQuantity(itemId: String, quantity: Int)
 }

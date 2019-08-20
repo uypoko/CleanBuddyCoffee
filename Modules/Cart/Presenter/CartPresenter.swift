@@ -15,18 +15,27 @@ class CartPresenter: CartModuleInput, CartViewOutput {
     func viewIsReady() {
         interactor.getCartItems()
     }
+    
+    func deleteItem(id: String) {
+        interactor.deleteItem(id: id)
+    }
+    
+    func changeItemQuantity(itemId: String, quantity: Int) {
+        interactor.changeItemQuantity(itemId: itemId, quantity: quantity)
+    }
 }
 
 extension CartPresenter: CartInteractorOutput {
-    func didFetchCartItems(items: [Cart.Item]) {
-        var viewModels: [Cart.ItemViewModel] = []
-        for item in items {
-            let quantity = "\(item.quatity)"
-            let price = "\(item.price) đ"
-            let viewModel = Cart.ItemViewModel(id: item.id, name: item.name, quatity: quantity, price: price)
-            viewModels.append(viewModel)
-        }
-        view.displayCartItems(items: viewModels)
+    func didFetchCartItems(items: [Cart.ItemViewModel]) {
+        view.displayCartItems(items: items)
+    }
+    
+    func didDeleteItem(id: String) {
+        view.didDeleteItem(id: id)
+    }
+    
+    func didChangeItemQuantity(itemId: String, quantity: Int) {
+        view.didChangeItemQuantity(itemId: itemId, quantity: quantity)
     }
     
 }

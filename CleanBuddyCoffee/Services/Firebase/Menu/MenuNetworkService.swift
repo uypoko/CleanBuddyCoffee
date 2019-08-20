@@ -9,7 +9,7 @@
 import Foundation
 import Firebase
 
-class DrinkService: ListDrinksService {
+class MenuNetworkService: ListDrinksService {
     
     let db = Firestore.firestore()
     let storageRef = Storage.storage().reference()
@@ -45,7 +45,7 @@ class DrinkService: ListDrinksService {
     
 }
 
-extension DrinkService: DrinkDetailService {
+extension MenuNetworkService: DrinkDetailService {
     
     func fetchDrink(for id: String, completion: @escaping (DrinkDetail.Drink?) -> Void) {
         db.collection("drinks").document(id).getDocument { snapshot, _ in
@@ -74,7 +74,7 @@ extension DrinkService: DrinkDetailService {
     
 }
 
-extension DrinkService: CartNetworkService {
+extension MenuNetworkService: CartNetworkService {
     func fetchDrinks(drinkIds: [String], completion: @escaping ([Cart.FetchedItem]?) -> Void) {
         var cartItems: [Cart.FetchedItem] = []
         for id in drinkIds {

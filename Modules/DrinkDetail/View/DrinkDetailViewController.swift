@@ -24,6 +24,9 @@ class DrinkDetailViewController: UIViewController {
     // MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        nameLabel.text = ""
+        descriptionLabel.text = ""
+        priceLabel.text = ""
         if let drinkId = drinkId {
             output.viewIsReady(drinkId: drinkId)
         }

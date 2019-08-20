@@ -9,6 +9,9 @@
 import UIKit
 
 class CartItemCell: UITableViewCell {
+    
+    var itemId: String?
+    var delegate: ChangeItemQuantityDelegate?
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var quantityLabel: UILabel!
@@ -27,12 +30,21 @@ class CartItemCell: UITableViewCell {
     }
     
     func updateUI(item: Cart.ItemViewModel) {
+        itemId = item.id
         nameLabel.text = item.name
-        quantityLabel.text = item.quatity
-        priceLabel.text = item.price
+        quantityLabel.text = "\(item.quantity)"
+        priceLabel.text = "\(item.price) đ"
+        stepper.value = Double(item.quantity)
     }
 
     @IBAction func stepperValueChanged(_ sender: Any) {
+        let quantity = Int(stepper.value)
+        quantityLabel.text = "\(quantity)"
+        delegate?.changeItemQuantity(itemId: itemId!, quantity: quantity)
     }
     
+}
+
+protocol ChangeItemQuantityDelegate {
+    func changeItemQuantity(itemId: String, quantity: Int)
 }

@@ -32,7 +32,7 @@
 		940D4674230ADAA800F20C22 /* CartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940D4673230ADAA800F20C22 /* CartModel.swift */; };
 		94170330230AAD0000BADB90 /* ListDrinksInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9417032F230AAD0000BADB90 /* ListDrinksInitializer.swift */; };
 		9417038A230AB1EE00BADB90 /* Cart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94170389230AB1EE00BADB90 /* Cart.storyboard */; };
-		94170395230AB64600BADB90 /* CartCodableService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94170394230AB64600BADB90 /* CartCodableService.swift */; };
+		94170395230AB64600BADB90 /* CartLocalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94170394230AB64600BADB90 /* CartLocalService.swift */; };
 		94170397230AB6CB00BADB90 /* CartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94170396230AB6CB00BADB90 /* CartItem.swift */; };
 		9490DD17230566A7006A03E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9490DD16230566A7006A03E8 /* AppDelegate.swift */; };
 		9490DD1E230566A8006A03E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9490DD1D230566A8006A03E8 /* Assets.xcassets */; };
@@ -55,10 +55,11 @@
 		9490DD54230570B9006A03E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9490DD4F230570B9006A03E8 /* Main.storyboard */; };
 		9490DD57230572E6006A03E8 /* ListDrinks.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9490DD56230572E6006A03E8 /* ListDrinks.storyboard */; };
 		9490DD5923057411006A03E8 /* ListDrinksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9490DD5823057411006A03E8 /* ListDrinksModel.swift */; };
-		9490DD5F230575EB006A03E8 /* DrinkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9490DD5E230575EB006A03E8 /* DrinkService.swift */; };
-		A421178D230994D800792F47 /* FirebaseProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A421178C230994D800792F47 /* FirebaseProtocols.swift */; };
+		9490DD5F230575EB006A03E8 /* MenuNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9490DD5E230575EB006A03E8 /* MenuNetworkService.swift */; };
+		A421178D230994D800792F47 /* MenuNetworkProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A421178C230994D800792F47 /* MenuNetworkProtocols.swift */; };
 		A42117912309A02500792F47 /* DrinkDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A42117902309A02500792F47 /* DrinkDetail.storyboard */; };
 		A42117932309A40B00792F47 /* DrinkDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42117922309A40B00792F47 /* DrinkDetailModel.swift */; };
+		A42C52AF230BEE820019BD5E /* CartLocalProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42C52AE230BEE820019BD5E /* CartLocalProtocols.swift */; };
 		A48CC2522305AE240057000E /* DrinkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48CC2512305AE240057000E /* DrinkTableViewCell.swift */; };
 		B485A6305376104DEDEFC7A0 /* DrinkDetailInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A5F7C2FF4923D82E97404A /* DrinkDetailInteractorInput.swift */; };
 		C51D7D262824518E3EA989F5 /* DrinkDetailViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D20DEC0C9C41488CCB48D6 /* DrinkDetailViewInput.swift */; };
@@ -87,7 +88,7 @@
 		94170387230AB1CA00BADB90 /* CartRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartRouter.swift; sourceTree = "<group>"; };
 		94170388230AB1CA00BADB90 /* CartRouterInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartRouterInput.swift; sourceTree = "<group>"; };
 		94170389230AB1EE00BADB90 /* Cart.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Cart.storyboard; sourceTree = "<group>"; };
-		94170394230AB64600BADB90 /* CartCodableService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCodableService.swift; sourceTree = "<group>"; };
+		94170394230AB64600BADB90 /* CartLocalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartLocalService.swift; sourceTree = "<group>"; };
 		94170396230AB6CB00BADB90 /* CartItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItem.swift; sourceTree = "<group>"; };
 		9490DD13230566A7006A03E8 /* CleanBuddyCoffee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanBuddyCoffee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9490DD16230566A7006A03E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -112,12 +113,13 @@
 		9490DD50230570B9006A03E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9490DD56230572E6006A03E8 /* ListDrinks.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListDrinks.storyboard; sourceTree = "<group>"; };
 		9490DD5823057411006A03E8 /* ListDrinksModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDrinksModel.swift; sourceTree = "<group>"; };
-		9490DD5E230575EB006A03E8 /* DrinkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkService.swift; sourceTree = "<group>"; };
+		9490DD5E230575EB006A03E8 /* MenuNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuNetworkService.swift; sourceTree = "<group>"; };
 		9E0A2A5E9EB3FF92B8887E9C /* DrinkDetailInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DrinkDetailInteractor.swift; sourceTree = "<group>"; };
 		9F2926DB96B45D198CB29293 /* DrinkDetailRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DrinkDetailRouter.swift; sourceTree = "<group>"; };
-		A421178C230994D800792F47 /* FirebaseProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseProtocols.swift; sourceTree = "<group>"; };
+		A421178C230994D800792F47 /* MenuNetworkProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuNetworkProtocols.swift; sourceTree = "<group>"; };
 		A42117902309A02500792F47 /* DrinkDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DrinkDetail.storyboard; sourceTree = "<group>"; };
 		A42117922309A40B00792F47 /* DrinkDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkDetailModel.swift; sourceTree = "<group>"; };
+		A42C52AE230BEE820019BD5E /* CartLocalProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartLocalProtocols.swift; sourceTree = "<group>"; };
 		A48CC2512305AE240057000E /* DrinkTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkTableViewCell.swift; sourceTree = "<group>"; };
 		B1D20DEC0C9C41488CCB48D6 /* DrinkDetailViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DrinkDetailViewInput.swift; sourceTree = "<group>"; };
 		BCE56D779C4F2F1B178860B4 /* DrinkDetailPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DrinkDetailPresenter.swift; sourceTree = "<group>"; };
@@ -258,13 +260,14 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
-		94170393230AB62B00BADB90 /* Codable */ = {
+		94170393230AB62B00BADB90 /* Local */ = {
 			isa = PBXGroup;
 			children = (
-				94170394230AB64600BADB90 /* CartCodableService.swift */,
+				94170394230AB64600BADB90 /* CartLocalService.swift */,
 				94170396230AB6CB00BADB90 /* CartItem.swift */,
+				A42C52AE230BEE820019BD5E /* CartLocalProtocols.swift */,
 			);
-			path = Codable;
+			path = Local;
 			sourceTree = "<group>";
 		};
 		9490DD0A230566A7006A03E8 = {
@@ -395,7 +398,7 @@
 		9490DD5A23057555006A03E8 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				94170393230AB62B00BADB90 /* Codable */,
+				94170393230AB62B00BADB90 /* Local */,
 				9417038B230AB29900BADB90 /* CoreData */,
 				9490DD5B2305755E006A03E8 /* Firebase */,
 			);
@@ -405,8 +408,7 @@
 		9490DD5B2305755E006A03E8 /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
-				A421178E2309976200792F47 /* Implementations */,
-				A421178C230994D800792F47 /* FirebaseProtocols.swift */,
+				A42C52AD230BDC6B0019BD5E /* Menu */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -419,12 +421,13 @@
 			path = Configurator;
 			sourceTree = "<group>";
 		};
-		A421178E2309976200792F47 /* Implementations */ = {
+		A42C52AD230BDC6B0019BD5E /* Menu */ = {
 			isa = PBXGroup;
 			children = (
-				9490DD5E230575EB006A03E8 /* DrinkService.swift */,
+				9490DD5E230575EB006A03E8 /* MenuNetworkService.swift */,
+				A421178C230994D800792F47 /* MenuNetworkProtocols.swift */,
 			);
-			path = Implementations;
+			path = Menu;
 			sourceTree = "<group>";
 		};
 		B82A7F03C3716820F5290111 /* Modules */ = {
@@ -575,7 +578,7 @@
 			files = (
 				9490DD17230566A7006A03E8 /* AppDelegate.swift in Sources */,
 				9490DD3E23056F4C006A03E8 /* ListDrinksPresenter.swift in Sources */,
-				A421178D230994D800792F47 /* FirebaseProtocols.swift in Sources */,
+				A421178D230994D800792F47 /* MenuNetworkProtocols.swift in Sources */,
 				9490DD4223056F4C006A03E8 /* ListDrinksConfigurator.swift in Sources */,
 				940D466E230AD20D00F20C22 /* CartInteractorOutput.swift in Sources */,
 				A42117932309A40B00792F47 /* DrinkDetailModel.swift in Sources */,
@@ -585,7 +588,7 @@
 				9490DD53230570B9006A03E8 /* MainViewController.swift in Sources */,
 				9490DD3D23056F4C006A03E8 /* ListDrinksModuleInput.swift in Sources */,
 				940D4665230AD1D700F20C22 /* CartConfigurator.swift in Sources */,
-				9490DD5F230575EB006A03E8 /* DrinkService.swift in Sources */,
+				9490DD5F230575EB006A03E8 /* MenuNetworkService.swift in Sources */,
 				9490DD4023056F4C006A03E8 /* ListDrinksViewInput.swift in Sources */,
 				940D466D230AD20B00F20C22 /* CartInteractorInput.swift in Sources */,
 				940D4669230AD1FE00F20C22 /* CartViewOutput.swift in Sources */,
@@ -593,7 +596,7 @@
 				9490DD5923057411006A03E8 /* ListDrinksModel.swift in Sources */,
 				9490DD4423056F4C006A03E8 /* ListDrinksInteractorInput.swift in Sources */,
 				9490DD4123056F4C006A03E8 /* ListDrinksViewController.swift in Sources */,
-				94170395230AB64600BADB90 /* CartCodableService.swift in Sources */,
+				94170395230AB64600BADB90 /* CartLocalService.swift in Sources */,
 				A48CC2522305AE240057000E /* DrinkTableViewCell.swift in Sources */,
 				9490DD4723056F4C006A03E8 /* ListDrinksRouterInput.swift in Sources */,
 				94170330230AAD0000BADB90 /* ListDrinksInitializer.swift in Sources */,
@@ -612,6 +615,7 @@
 				67F9DC57B9BFB05B83795F91 /* DrinkDetailModuleInput.swift in Sources */,
 				940D4672230AD47E00F20C22 /* CartItemCell.swift in Sources */,
 				7F96B71F1887090F837D97A2 /* DrinkDetailPresenter.swift in Sources */,
+				A42C52AF230BEE820019BD5E /* CartLocalProtocols.swift in Sources */,
 				940D466F230AD21000F20C22 /* CartRouter.swift in Sources */,
 				B485A6305376104DEDEFC7A0 /* DrinkDetailInteractorInput.swift in Sources */,
 				2B8E25F40D3767D75138AC81 /* DrinkDetailInteractorOutput.swift in Sources */,

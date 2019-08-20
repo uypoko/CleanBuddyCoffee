@@ -28,7 +28,7 @@ class ListDrinksModuleConfigurator {
 
         let interactor = ListDrinksInteractor()
         interactor.output = presenter
-        let service: ListDrinksService = DrinkService()
+        let service: ListDrinksService = MenuNetworkService()
         interactor.service = service
 
         presenter.interactor = interactor

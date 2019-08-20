@@ -16,17 +16,10 @@ enum Cart {
         var price: Int
     }
     
-    struct Item {
-        let id: String
-        var name: String
-        var quatity: Int
-        var price: Int
-    }
-    
     struct ItemViewModel {
         let id: String
         var name: String
-        var quatity: String
-        var price: String
+        var quantity: Int
+        var price: Int
     }
 }

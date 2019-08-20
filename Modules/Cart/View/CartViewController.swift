@@ -16,11 +16,19 @@ class CartViewController: UITableViewController {
     // MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.leftBarButtonItem = editButtonItem
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         output.viewIsReady()
+    }
+    
+    func updatePriceTitle() {
+        let total = items.reduce(0) { (result, item) -> Int in
+            return result + (item.price * item.quantity)
+        }
+        navigationItem.title = "\(total) đ"
     }
 
     // MARK Tableview data source
@@ -33,14 +41,32 @@ class CartViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100.0
+        return 90.0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "drinkCell", for: indexPath) as! CartItemCell
         let item = items[indexPath.row]
         cell.updateUI(item: item)
+        cell.delegate = self
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let item = items[indexPath.row]
+            output.deleteItem(id: item.id)
+        }
+    }
+    
+    // MARK Tableview delegate
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 
 }
@@ -48,6 +74,27 @@ class CartViewController: UITableViewController {
 extension CartViewController: CartViewInput {
     func displayCartItems(items: [Cart.ItemViewModel]) {
         self.items = items
+        updatePriceTitle()
         tableView.reloadData()
+    }
+    
+    func didDeleteItem(id: String) {
+        guard let index = items.firstIndex(where: {$0.id == id}) else { return }
+        items.remove(at: index)
+        updatePriceTitle()
+        tableView.reloadData()
+    }
+    
+    func didChangeItemQuantity(itemId: String, quantity: Int) {
+        guard let index = items.firstIndex(where: {$0.id == itemId}) else { return }
+        items[index].quantity = quantity
+        updatePriceTitle()
+        tableView.reloadData()
+    }
+}
+
+extension CartViewController: ChangeItemQuantityDelegate {
+    func changeItemQuantity(itemId: String, quantity: Int) {
+        output.changeItemQuantity(itemId: itemId, quantity: quantity)
     }
 }
