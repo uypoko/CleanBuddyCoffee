@@ -8,14 +8,19 @@
 
 import Foundation
 
-protocol DrinkDetailModuleCodableCartService {
+protocol DrinkDetailModuleLocalCartService {
     func addItem(drinkId: String, quantity: Int)
 }
 
-protocol CartModuleCodableService {
+protocol CartModuleLocalService {
     func getItems() -> [CartItem]
     func changeItemQuantity(drinkId: String, quantity: Int)
     func removeItem(drinkId: String)
+}
+
+protocol DeliveryAddressModuleLocalService {
+    func getOrderItems() -> [CartItem]
+    func removeCartItems()
 }
 
 protocol AppLocalService {

@@ -10,15 +10,20 @@ class CartInteractor: CartInteractorInput {
 
     weak var output: CartInteractorOutput!
     var networkService: CartNetworkService?
-    var codableService: CartModuleCodableService!
+    var localService: CartModuleLocalService!
     
     func getCartItems() {
         var ids: [String] = []
-        let cartItems = codableService.getItems()
+        let cartItems = localService.getItems()
+        if cartItems.isEmpty {
+            output.cartIsEmpty()
+            return
+        }
+        
         for item in cartItems {
             ids.append(item.id)
         }
-        networkService?.fetchDrinks(drinkIds: ids) { fetchedItems in
+        networkService?.fetchDrinks(drinkIds: ids) { [weak self] fetchedItems in
             guard let fetchedItems = fetchedItems else { return }
             var items: [Cart.ItemViewModel] = []
             for fetchedItem in fetchedItems {
@@ -26,17 +31,17 @@ class CartInteractor: CartInteractorInput {
                 let item = Cart.ItemViewModel(id: fetchedItem.id, name: fetchedItem.name, quantity: quantity, price: fetchedItem.price)
                 items.append(item)
             }
-            self.output.didFetchCartItems(items: items)
+            self?.output.didFetchCartItems(items: items)
         }
     }
     
     func deleteItem(id: String) {
-        codableService.removeItem(drinkId: id)
+        localService.removeItem(drinkId: id)
         output.didDeleteItem(id: id)
     }
     
     func changeItemQuantity(itemId: String, quantity: Int) {
-        codableService.changeItemQuantity(drinkId: itemId, quantity: quantity)
+        localService.changeItemQuantity(drinkId: itemId, quantity: quantity)
         output.didChangeItemQuantity(itemId: itemId, quantity: quantity)
     }
     

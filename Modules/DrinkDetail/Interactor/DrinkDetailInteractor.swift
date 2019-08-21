@@ -10,7 +10,7 @@ class DrinkDetailInteractor: DrinkDetailInteractorInput {
 
     weak var output: DrinkDetailInteractorOutput!
     var networkService: DrinkDetailService?
-    var cartService: DrinkDetailModuleCodableCartService?
+    var cartService: DrinkDetailModuleLocalCartService?
     
     func fetchDrink(drinkId: String) {
         networkService?.fetchDrink(for: drinkId) { [weak self] drink in

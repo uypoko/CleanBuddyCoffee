@@ -39,6 +39,10 @@ class CartItemCell: UITableViewCell {
 
     @IBAction func stepperValueChanged(_ sender: Any) {
         let quantity = Int(stepper.value)
+        if quantity == 0 {
+            stepper.value = 1
+            return
+        }
         quantityLabel.text = "\(quantity)"
         delegate?.changeItemQuantity(itemId: itemId!, quantity: quantity)
     }

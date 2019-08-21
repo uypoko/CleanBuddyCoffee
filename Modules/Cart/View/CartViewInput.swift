@@ -16,4 +16,5 @@ protocol CartViewInput: class {
     func displayCartItems(items: [Cart.ItemViewModel])
     func didDeleteItem(id: String)
     func didChangeItemQuantity(itemId: String, quantity: Int)
+    func cartIsEmpty()
 }

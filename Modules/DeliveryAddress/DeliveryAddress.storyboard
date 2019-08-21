@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Xf2-20-6Za">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Delivery Address View Controller-->
+        <scene sceneID="wxt-uQ-DXs">
+            <objects>
+                <viewController storyboardIdentifier="DeliveryAddressViewController" id="Xf2-20-6Za" customClass="DeliveryAddressViewController" customModule="CleanBuddyCoffee" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Nnl-ST-PpO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="GgK-VH-cbs">
+                                <rect key="frame" x="16" y="52" width="382" height="242"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S4J-ZZ-UGT">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h3F-Pe-AED">
+                                        <rect key="frame" x="0.0" y="38" width="382" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D5B-H7-cW7">
+                                        <rect key="frame" x="0.0" y="76" width="382" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Address" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ujg-tH-5p4" customClass="AddressTextView" customModule="CleanBuddyCoffee" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="114" width="382" height="128"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="128" id="ijG-eX-JYa"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hhk-FS-C1M">
+                                <rect key="frame" x="16" y="310" width="382" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="WZg-Gp-XYg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Place Order">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="placeOrderButtonTapped:" destination="Xf2-20-6Za" eventType="touchUpInside" id="WaF-vn-5qA"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="8fo-GG-kc2">
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="q2M-Ji-n13" firstAttribute="trailing" secondItem="GgK-VH-cbs" secondAttribute="trailing" constant="16" id="5cM-eu-OHX">
+                                <variation key="widthClass=regular" constant="64"/>
+                            </constraint>
+                            <constraint firstItem="GgK-VH-cbs" firstAttribute="leading" secondItem="q2M-Ji-n13" secondAttribute="leading" constant="16" id="CZn-lM-tF7">
+                                <variation key="widthClass=regular" constant="64"/>
+                            </constraint>
+                            <constraint firstItem="q2M-Ji-n13" firstAttribute="trailing" secondItem="hhk-FS-C1M" secondAttribute="trailing" constant="16" id="Np0-Om-rJE">
+                                <variation key="widthClass=regular" constant="64"/>
+                            </constraint>
+                            <constraint firstItem="hhk-FS-C1M" firstAttribute="top" secondItem="GgK-VH-cbs" secondAttribute="bottom" constant="16" id="OHJ-Gn-iTM"/>
+                            <constraint firstItem="hhk-FS-C1M" firstAttribute="leading" secondItem="q2M-Ji-n13" secondAttribute="leading" constant="16" id="aII-Ft-U5c">
+                                <variation key="widthClass=regular" constant="64"/>
+                            </constraint>
+                            <constraint firstItem="8fo-GG-kc2" firstAttribute="centerX" secondItem="Nnl-ST-PpO" secondAttribute="centerX" id="n5c-8m-scF"/>
+                            <constraint firstItem="8fo-GG-kc2" firstAttribute="centerY" secondItem="Nnl-ST-PpO" secondAttribute="centerY" id="ne0-en-9Ca"/>
+                            <constraint firstItem="GgK-VH-cbs" firstAttribute="top" secondItem="q2M-Ji-n13" secondAttribute="top" constant="8" id="yQQ-MY-CED"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="q2M-Ji-n13"/>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="8fo-GG-kc2" id="R5y-Av-cmi"/>
+                        <outlet property="addressTextView" destination="ujg-tH-5p4" id="LCf-Y7-PNn"/>
+                        <outlet property="emailField" destination="S4J-ZZ-UGT" id="okE-Fi-wmJ"/>
+                        <outlet property="nameField" destination="h3F-Pe-AED" id="Y5t-Ow-bgM"/>
+                        <outlet property="phoneNumberField" destination="D5B-H7-cW7" id="wGw-aC-IfI"/>
+                        <outlet property="placeOrderButton" destination="hhk-FS-C1M" id="ypx-Vb-A6J"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BJo-2v-ZoZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2996" y="13"/>
+        </scene>
+    </scenes>
+</document>

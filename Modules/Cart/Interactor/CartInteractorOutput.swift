@@ -12,4 +12,5 @@ protocol CartInteractorOutput: class {
     func didFetchCartItems(items: [Cart.ItemViewModel])
     func didDeleteItem(id: String)
     func didChangeItemQuantity(itemId: String, quantity: Int)
+    func cartIsEmpty()
 }

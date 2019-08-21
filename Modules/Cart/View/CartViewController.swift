@@ -16,14 +16,25 @@ class CartViewController: UITableViewController {
     // MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         navigationItem.leftBarButtonItem = editButtonItem
+        let confirmButton = UIBarButtonItem(title: "Confirm", style: .plain, target: self, action: #selector(confirmButtonTapped))
+        navigationItem.rightBarButtonItem = confirmButton
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        output.viewIsReady()
+        output.getCartItems()
     }
     
+    // MARK: IBActions
+    @IBAction func confirmButtonTapped(sender: UIBarButtonItem) {
+        guard !items.isEmpty else { return }
+        output.confirmCart()
+    }
+    
+    // MARK: View setups
     func updatePriceTitle() {
         let total = items.reduce(0) { (result, item) -> Int in
             return result + (item.price * item.quantity)
@@ -31,7 +42,7 @@ class CartViewController: UITableViewController {
         navigationItem.title = "\(total) đ"
     }
 
-    // MARK Tableview data source
+    // MARK: Tableview data source
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -63,8 +74,7 @@ class CartViewController: UITableViewController {
         }
     }
     
-    // MARK Tableview delegate
-    
+    // MARK: Tableview delegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
@@ -89,6 +99,11 @@ extension CartViewController: CartViewInput {
         guard let index = items.firstIndex(where: {$0.id == itemId}) else { return }
         items[index].quantity = quantity
         updatePriceTitle()
+        tableView.reloadData()
+    }
+    
+    func cartIsEmpty() {
+        items = []
         tableView.reloadData()
     }
 }

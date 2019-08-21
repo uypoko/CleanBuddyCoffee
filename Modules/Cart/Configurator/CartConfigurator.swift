@@ -20,6 +20,7 @@ class CartModuleConfigurator {
     private func configure(viewController: CartViewController) {
 
         let router = CartRouter()
+        router.sourceView = viewController
 
         let presenter = CartPresenter()
         presenter.view = viewController
@@ -28,7 +29,7 @@ class CartModuleConfigurator {
         let interactor = CartInteractor()
         interactor.output = presenter
         let codableService = CartLocalService()
-        interactor.codableService = codableService
+        interactor.localService = codableService
         let networkService = MenuNetworkService()
         interactor.networkService = networkService
 

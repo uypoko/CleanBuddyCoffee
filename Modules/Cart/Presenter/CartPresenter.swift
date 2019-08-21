@@ -12,7 +12,7 @@ class CartPresenter: CartModuleInput, CartViewOutput {
     var interactor: CartInteractorInput!
     var router: CartRouterInput!
 
-    func viewIsReady() {
+    func getCartItems() {
         interactor.getCartItems()
     }
     
@@ -22,6 +22,10 @@ class CartPresenter: CartModuleInput, CartViewOutput {
     
     func changeItemQuantity(itemId: String, quantity: Int) {
         interactor.changeItemQuantity(itemId: itemId, quantity: quantity)
+    }
+    
+    func confirmCart() {
+        router.routeToDeliveryAddress()
     }
 }
 
@@ -38,4 +42,7 @@ extension CartPresenter: CartInteractorOutput {
         view.didChangeItemQuantity(itemId: itemId, quantity: quantity)
     }
     
+    func cartIsEmpty() {
+        view.cartIsEmpty()
+    }
 }
