@@ -20,6 +20,7 @@ class DeliveryAddressModuleConfigurator {
     private func configure(viewController: DeliveryAddressViewController) {
 
         let router = DeliveryAddressRouter()
+        router.sourceView = viewController
 
         let presenter = DeliveryAddressPresenter()
         presenter.view = viewController

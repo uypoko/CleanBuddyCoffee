@@ -12,6 +12,6 @@ protocol DeliveryAddressViewInput: class {
         @author Ryan
         Setup initial state of the view
     */
-    func didPlaceOrder()
-    func failedPlaceOrder(error: Error)
+    func displaySuccessOrderMessage()
+    func displayErrorOrderMessage(error: Error)
 }

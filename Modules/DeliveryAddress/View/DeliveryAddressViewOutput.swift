@@ -15,4 +15,5 @@ protocol DeliveryAddressViewOutput {
 
     func viewIsReady()
     func placeOrder(email: String, name: String, phone: String, address: String)
+    func didShowOrderSuccessMessage()
 }

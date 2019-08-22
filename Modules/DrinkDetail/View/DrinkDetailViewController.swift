@@ -45,7 +45,7 @@ class DrinkDetailViewController: UIViewController {
             sender.transform = CGAffineTransform(scaleX: 3.0, y: 3.0)
             sender.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
         }
-        output.addToCart(drinkId: drinkId, quantity: quantity)
+        output.addToCartButtonTapped(drinkId: drinkId, quantity: quantity)
     }
     
 }

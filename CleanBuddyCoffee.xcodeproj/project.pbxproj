@@ -27,7 +27,6 @@
 		940D4667230AD1E100F20C22 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9417037C230AB1CA00BADB90 /* CartViewController.swift */; };
 		940D4668230AD1FC00F20C22 /* CartViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9417037D230AB1CA00BADB90 /* CartViewInput.swift */; };
 		940D4669230AD1FE00F20C22 /* CartViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9417037E230AB1CA00BADB90 /* CartViewOutput.swift */; };
-		940D466A230AD20100F20C22 /* CartModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94170379230AB1CA00BADB90 /* CartModuleInput.swift */; };
 		940D466B230AD20200F20C22 /* CartPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9417037A230AB1CA00BADB90 /* CartPresenter.swift */; };
 		940D466C230AD20900F20C22 /* CartInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94170383230AB1CA00BADB90 /* CartInteractor.swift */; };
 		940D466D230AD20B00F20C22 /* CartInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94170384230AB1CA00BADB90 /* CartInteractorInput.swift */; };
@@ -101,7 +100,6 @@
 		940D4671230AD47E00F20C22 /* CartItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemCell.swift; sourceTree = "<group>"; };
 		940D4673230ADAA800F20C22 /* CartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartModel.swift; sourceTree = "<group>"; };
 		9417032F230AAD0000BADB90 /* ListDrinksInitializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListDrinksInitializer.swift; sourceTree = "<group>"; };
-		94170379230AB1CA00BADB90 /* CartModuleInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartModuleInput.swift; sourceTree = "<group>"; };
 		9417037A230AB1CA00BADB90 /* CartPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartPresenter.swift; sourceTree = "<group>"; };
 		9417037C230AB1CA00BADB90 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		9417037D230AB1CA00BADB90 /* CartViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewInput.swift; sourceTree = "<group>"; };
@@ -284,7 +282,6 @@
 		94170378230AB1CA00BADB90 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				94170379230AB1CA00BADB90 /* CartModuleInput.swift */,
 				9417037A230AB1CA00BADB90 /* CartPresenter.swift */,
 			);
 			path = Presenter;
@@ -737,7 +734,6 @@
 				94170330230AAD0000BADB90 /* ListDrinksInitializer.swift in Sources */,
 				A44704D2230D57DA0030009C /* Validators.swift in Sources */,
 				A44704DF230D663F0030009C /* OrderingNetworkProtocols.swift in Sources */,
-				940D466A230AD20100F20C22 /* CartModuleInput.swift in Sources */,
 				A44704D4230D57EF0030009C /* AddressTextView.swift in Sources */,
 				A44704DA230D62170030009C /* UIViewController+Extensions.swift in Sources */,
 				940D4670230AD21200F20C22 /* CartRouterInput.swift in Sources */,

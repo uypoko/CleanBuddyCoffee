@@ -14,5 +14,5 @@ protocol DrinkDetailViewOutput {
     */
 
     func viewIsReady(drinkId: String)
-    func addToCart(drinkId: String, quantity: Int)
+    func addToCartButtonTapped(drinkId: String, quantity: Int)
 }

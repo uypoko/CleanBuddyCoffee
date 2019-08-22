@@ -13,8 +13,8 @@ protocol CartViewOutput {
         Notify presenter that view is ready
     */
 
-    func getCartItems()
-    func deleteItem(id: String)
-    func changeItemQuantity(itemId: String, quantity: Int)
-    func confirmCart()
+    func viewWillAppear()
+    func deleteItemButtonTapped(id: String)
+    func changeItemQuantityButtonTapped(itemId: String, quantity: Int)
+    func confirmCartButtonTaped()
 }

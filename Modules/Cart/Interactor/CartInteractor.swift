@@ -13,13 +13,13 @@ class CartInteractor: CartInteractorInput {
     var localService: CartModuleLocalService!
     
     func getCartItems() {
-        var ids: [String] = []
         let cartItems = localService.getItems()
         if cartItems.isEmpty {
-            output.cartIsEmpty()
+            output.didFetchCartItems(items: [])
             return
         }
         
+        var ids: [String] = []
         for item in cartItems {
             ids.append(item.id)
         }

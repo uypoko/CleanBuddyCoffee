@@ -18,7 +18,7 @@ class DrinkDetailPresenter: DrinkDetailModuleInput, DrinkDetailViewOutput {
         interactor.fetchDrinkImage(drinkId: drinkId)
     }
     
-    func addToCart(drinkId: String, quantity: Int) {
+    func addToCartButtonTapped(drinkId: String, quantity: Int) {
         interactor.addToCart(drinkId: drinkId, quantity: quantity)
     }
     

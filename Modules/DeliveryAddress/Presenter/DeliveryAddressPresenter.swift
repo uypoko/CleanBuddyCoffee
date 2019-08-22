@@ -19,14 +19,18 @@ class DeliveryAddressPresenter: DeliveryAddressViewOutput {
     func placeOrder(email: String, name: String, phone: String, address: String) {
         interactor.placeOrder(email: email, name: name, phone: phone, address: address)
     }
+    
+    func didShowOrderSuccessMessage() {
+        router.routeToCartView()
+    }
 }
 
 extension DeliveryAddressPresenter: DeliveryAddressInteractorOutput {
     func didPlaceOrder() {
-        view.didPlaceOrder()
+        view.displaySuccessOrderMessage()
     }
     
     func failedPlaceOrder(error: Error) {
-        view.failedPlaceOrder(error: error)
+        view.displayErrorOrderMessage(error: error)
     }
 }

@@ -9,5 +9,5 @@
 import Foundation
 
 protocol DeliveryAddressRouterInput {
-    
+    func routeToCartView()
 }

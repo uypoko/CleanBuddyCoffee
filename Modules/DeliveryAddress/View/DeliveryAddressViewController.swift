@@ -43,6 +43,7 @@ class DeliveryAddressViewController: UIViewController {
             
             let alert = UIAlertController(title: "Confirm Order", message: nil, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Submit", style: .default) { _ in
+                self.view.isUserInteractionEnabled = false
                 self.activityIndicator.isHidden = false
                 self.activityIndicator.startAnimating()
                 self.output.placeOrder(email: email, name: name, phone: phone, address: address)
@@ -57,15 +58,19 @@ class DeliveryAddressViewController: UIViewController {
 }
 
 extension DeliveryAddressViewController: DeliveryAddressViewInput {
-    func didPlaceOrder() {
+    func displaySuccessOrderMessage() {
         activityIndicator.stopAnimating()
         activityIndicator.isHidden = true
-        showAlert(message: "Place order successfully!", completion: nil)
+        view.isUserInteractionEnabled = true
+        showAlert(message: "Place order successfully!") { _ in
+            self.output.didShowOrderSuccessMessage()
+        }
     }
     
-    func failedPlaceOrder(error: Error) {
+    func displayErrorOrderMessage(error: Error) {
         activityIndicator.stopAnimating()
         activityIndicator.isHidden = true
+        view.isUserInteractionEnabled = true
         showAlert(message: error.localizedDescription, completion: nil)
     }
 }

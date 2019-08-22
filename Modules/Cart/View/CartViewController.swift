@@ -25,13 +25,13 @@ class CartViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        output.getCartItems()
+        output.viewWillAppear()
     }
     
     // MARK: IBActions
     @IBAction func confirmButtonTapped(sender: UIBarButtonItem) {
         guard !items.isEmpty else { return }
-        output.confirmCart()
+        output.confirmCartButtonTaped()
     }
     
     // MARK: View setups
@@ -70,7 +70,7 @@ class CartViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let item = items[indexPath.row]
-            output.deleteItem(id: item.id)
+            output.deleteItemButtonTapped(id: item.id)
         }
     }
     
@@ -101,15 +101,10 @@ extension CartViewController: CartViewInput {
         updatePriceTitle()
         tableView.reloadData()
     }
-    
-    func cartIsEmpty() {
-        items = []
-        tableView.reloadData()
-    }
 }
 
 extension CartViewController: ChangeItemQuantityDelegate {
     func changeItemQuantity(itemId: String, quantity: Int) {
-        output.changeItemQuantity(itemId: itemId, quantity: quantity)
+        output.changeItemQuantityButtonTapped(itemId: itemId, quantity: quantity)
     }
 }
