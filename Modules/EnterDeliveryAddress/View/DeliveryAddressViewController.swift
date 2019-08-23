@@ -43,10 +43,8 @@ class DeliveryAddressViewController: UIViewController {
             
             let alert = UIAlertController(title: "Confirm Order", message: nil, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Submit", style: .default) { _ in
-                self.view.isUserInteractionEnabled = false
-                self.activityIndicator.isHidden = false
-                self.activityIndicator.startAnimating()
-                self.output.placeOrder(email: email, name: name, phone: phone, address: address)
+                self.startActivityIndicator()
+                self.output.placeOrderButtonTapped(email: email, name: name, phone: phone, address: address)
             })
             alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
             present(alert, animated: true, completion: nil)
@@ -55,22 +53,34 @@ class DeliveryAddressViewController: UIViewController {
         }
     }
     
+    @IBAction func setAddressOnMapButtonTapped(_ sender: Any) {
+        output.setAddressOnMapButtonTapped()
+    }
+    
+    // MARK: View setups
+    func startActivityIndicator() {
+        view.isUserInteractionEnabled = false
+        activityIndicator.isHidden = false
+        activityIndicator.startAnimating()
+    }
+    
+    func stopActivityIndicator() {
+        activityIndicator.stopAnimating()
+        activityIndicator.isHidden = true
+        view.isUserInteractionEnabled = true
+    }
 }
 
 extension DeliveryAddressViewController: DeliveryAddressViewInput {
     func displaySuccessOrderMessage() {
-        activityIndicator.stopAnimating()
-        activityIndicator.isHidden = true
-        view.isUserInteractionEnabled = true
+        stopActivityIndicator()
         showAlert(message: "Place order successfully!") { _ in
             self.output.didShowOrderSuccessMessage()
         }
     }
     
     func displayErrorOrderMessage(error: Error) {
-        activityIndicator.stopAnimating()
-        activityIndicator.isHidden = true
-        view.isUserInteractionEnabled = true
+        stopActivityIndicator()
         showAlert(message: error.localizedDescription, completion: nil)
     }
 }

@@ -16,12 +16,16 @@ class DeliveryAddressPresenter: DeliveryAddressViewOutput {
 
     }
     
-    func placeOrder(email: String, name: String, phone: String, address: String) {
+    func placeOrderButtonTapped(email: String, name: String, phone: String, address: String) {
         interactor.placeOrder(email: email, name: name, phone: phone, address: address)
     }
     
     func didShowOrderSuccessMessage() {
         router.routeToCartView()
+    }
+    
+    func setAddressOnMapButtonTapped() {
+        router.routeToMapView()
     }
 }
 

@@ -13,4 +13,11 @@ class DeliveryAddressRouter: DeliveryAddressRouterInput {
     func routeToCartView() {
         sourceView.navigationController?.popViewController(animated: true)
     }
+    
+    func routeToMapView() {
+        let mapView = SetAddressOnMapViewController.instantiate(fromAppStoryboard: .SetAddressOnMap)
+        SetAddressOnMapModuleConfigurator().configureModuleForViewInput(viewInput: mapView)
+        sourceView.navigationController?.pushViewController(mapView, animated: true)
+    }
+    
 }

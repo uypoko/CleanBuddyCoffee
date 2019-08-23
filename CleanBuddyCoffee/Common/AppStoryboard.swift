@@ -16,6 +16,7 @@ enum AppStoryboard : String {
     case DrinkDetail
     case Cart
     case DeliveryAddress
+    case SetAddressOnMap
     
     var instance : UIStoryboard {
         

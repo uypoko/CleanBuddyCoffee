@@ -10,4 +10,5 @@ import Foundation
 
 protocol DeliveryAddressRouterInput {
     func routeToCartView()
+    func routeToMapView()
 }
