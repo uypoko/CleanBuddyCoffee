@@ -14,6 +14,12 @@ class CartLocalService {
     
 }
 
+extension CartLocalService: GetCartItemsLocalService {
+    func getCartItems() -> [CartItem] {
+         return CartLocalService.items
+    }
+}
+
 extension CartLocalService: DrinkDetailModuleLocalCartService {
     
     func addItem(drinkId: String, quantity: Int) {
@@ -28,10 +34,6 @@ extension CartLocalService: DrinkDetailModuleLocalCartService {
 
 extension CartLocalService: CartModuleLocalService {
     
-    func getItems() -> [CartItem] {
-        return CartLocalService.items
-    }
-    
     func changeItemQuantity(drinkId: String, quantity: Int) {
         guard let index = CartLocalService.items.firstIndex(where: {$0.id == drinkId}) else { return }
         CartLocalService.items[index].quantity = quantity
@@ -44,10 +46,6 @@ extension CartLocalService: CartModuleLocalService {
 }
 
 extension CartLocalService: DeliveryAddressModuleLocalService {
-    func getOrderItems() -> [CartItem] {
-        return CartLocalService.items
-    }
-    
     func removeCartItems() {
         CartLocalService.items.removeAll()
     }

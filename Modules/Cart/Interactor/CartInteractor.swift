@@ -10,10 +10,10 @@ class CartInteractor: CartInteractorInput {
 
     weak var output: CartInteractorOutput!
     var networkService: CartNetworkService?
-    var localService: CartModuleLocalService!
+    var localService: (GetCartItemsLocalService & CartModuleLocalService)!
     
     func getCartItems() {
-        let cartItems = localService.getItems()
+        let cartItems = localService.getCartItems()
         if cartItems.isEmpty {
             output.didFetchCartItems(items: [])
             return

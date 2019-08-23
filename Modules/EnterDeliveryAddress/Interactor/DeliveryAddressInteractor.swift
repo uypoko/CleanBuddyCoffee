@@ -9,13 +9,13 @@
 class DeliveryAddressInteractor: DeliveryAddressInteractorInput {
 
     weak var output: DeliveryAddressInteractorOutput!
-    var localService: DeliveryAddressModuleLocalService!
+    var localService: (DeliveryAddressModuleLocalService & GetCartItemsLocalService)!
     var networkService: DeliveryAddressModuleNetworkService?
     
     func placeOrder(email: String, name: String, phone: String, address: String) {
         let customer = DeliveryAddressModel.Customer(email: email, name: name, phone: phone, address: address)
         
-        let items = localService.getOrderItems()
+        let items = localService.getCartItems()
         networkService?.placeOrder(customer: customer, items: items) { [unowned self] error in
             if let error = error {
                 self.output.failedPlaceOrder(error: error)

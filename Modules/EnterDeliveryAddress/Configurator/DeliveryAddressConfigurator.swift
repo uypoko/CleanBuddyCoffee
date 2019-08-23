@@ -28,7 +28,7 @@ class DeliveryAddressModuleConfigurator {
 
         let interactor = DeliveryAddressInteractor()
         interactor.output = presenter
-        let localService = CartLocalService()
+        let localService: DeliveryAddressModuleLocalService & GetCartItemsLocalService = CartLocalService()
         interactor.localService = localService
         let networkService = OrderingNetworkService()
         interactor.networkService = networkService
