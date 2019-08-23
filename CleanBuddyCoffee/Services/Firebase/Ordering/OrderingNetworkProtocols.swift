@@ -9,5 +9,5 @@
 import Foundation
 
 protocol DeliveryAddressModuleNetworkService {
-    func placeOrder(customer: DeliveryAddressModel.Customer, items: [CartItem], completion: @escaping (Error?) -> Void)
+    func placeOrder(customer: DeliveryAddressModel.Customer, items: [Cart.Item], completion: @escaping (Error?) -> Void)
 }

@@ -89,6 +89,7 @@
 		94DC72E2230FD8F7006E814E /* Validators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DC72E1230FD8F7006E814E /* Validators.swift */; };
 		94DC72E6230FD907006E814E /* AddressTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DC72E4230FD907006E814E /* AddressTextView.swift */; };
 		94DC72E9230FD947006E814E /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DC72E8230FD947006E814E /* UIViewController+Extensions.swift */; };
+		94DC7352231004A0006E814E /* OrderCoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 94DC7350231004A0006E814E /* OrderCoreDataModel.xcdatamodeld */; };
 		A42117912309A02500792F47 /* DrinkDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A42117902309A02500792F47 /* DrinkDetail.storyboard */; };
 		A42117932309A40B00792F47 /* DrinkDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42117922309A40B00792F47 /* DrinkDetailModel.swift */; };
 		A48CC2522305AE240057000E /* DrinkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48CC2512305AE240057000E /* DrinkTableViewCell.swift */; };
@@ -178,6 +179,7 @@
 		94DC72E1230FD8F7006E814E /* Validators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Validators.swift; path = "../../../BuddyCoffee/BuddyCoffee/View Controllers/Validators.swift"; sourceTree = "<group>"; };
 		94DC72E4230FD907006E814E /* AddressTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressTextView.swift; sourceTree = "<group>"; };
 		94DC72E8230FD947006E814E /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		94DC7351231004A0006E814E /* OrderCoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OrderCoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 		9E0A2A5E9EB3FF92B8887E9C /* DrinkDetailInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DrinkDetailInteractor.swift; sourceTree = "<group>"; };
 		9F2926DB96B45D198CB29293 /* DrinkDetailRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DrinkDetailRouter.swift; sourceTree = "<group>"; };
 		A42117902309A02500792F47 /* DrinkDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DrinkDetail.storyboard; sourceTree = "<group>"; };
@@ -317,6 +319,7 @@
 		9417038B230AB29900BADB90 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				94DC7350231004A0006E814E /* OrderCoreDataModel.xcdatamodeld */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -860,6 +863,7 @@
 				94DC72DB230FD8AF006E814E /* DeliveryAddressRouter.swift in Sources */,
 				94DC72DA230FD8AF006E814E /* DeliveryAddressRouterInput.swift in Sources */,
 				940D4674230ADAA800F20C22 /* CartModel.swift in Sources */,
+				94DC7352231004A0006E814E /* OrderCoreDataModel.xcdatamodeld in Sources */,
 				94DC72D7230FD8AF006E814E /* DeliveryAddressInteractorOutput.swift in Sources */,
 				94DC72D9230FD8AF006E814E /* DeliveryAddressInteractor.swift in Sources */,
 				94DC72D8230FD8AF006E814E /* DeliveryAddressInteractorInput.swift in Sources */,
@@ -1072,6 +1076,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		94DC7350231004A0006E814E /* OrderCoreDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				94DC7351231004A0006E814E /* OrderCoreDataModel.xcdatamodel */,
+			);
+			currentVersion = 94DC7351231004A0006E814E /* OrderCoreDataModel.xcdatamodel */;
+			path = OrderCoreDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9490DD0B230566A7006A03E8 /* Project object */;
 }

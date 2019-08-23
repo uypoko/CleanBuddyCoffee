@@ -16,7 +16,7 @@ enum Cart {
         var price: Int
     }
     
-    struct ItemViewModel {
+    struct Item {
         let id: String
         var name: String
         var quantity: Int

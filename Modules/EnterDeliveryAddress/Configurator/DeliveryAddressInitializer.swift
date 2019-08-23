@@ -16,7 +16,7 @@ class DeliveryAddressModuleInitializer: NSObject {
     override func awakeFromNib() {
 
         let configurator = DeliveryAddressModuleConfigurator()
-        configurator.configureModuleForViewInput(viewInput: deliveryaddressViewController)
+        configurator.configureModuleForViewInput(viewInput: deliveryaddressViewController, cartItems: [])
     }
 
 }

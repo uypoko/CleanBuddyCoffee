@@ -13,7 +13,7 @@ protocol CartViewInput: class {
         Setup initial state of the view
     */
     
-    func displayCartItems(items: [Cart.ItemViewModel])
+    func displayCartItems(items: [Cart.Item])
     func didDeleteItem(id: String)
     func didChangeItemQuantity(itemId: String, quantity: Int)
 }

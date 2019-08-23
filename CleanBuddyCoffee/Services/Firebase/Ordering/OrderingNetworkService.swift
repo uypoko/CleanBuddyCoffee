@@ -14,10 +14,10 @@ class OrderingNetworkService {
 }
 
 extension OrderingNetworkService: DeliveryAddressModuleNetworkService {
-    func placeOrder(customer: DeliveryAddressModel.Customer, items: [CartItem], completion: @escaping (Error?) -> Void) {
+    func placeOrder(customer: DeliveryAddressModel.Customer, items: [Cart.Item], completion: @escaping (Error?) -> Void) {
         var itemsData: [[String: Any]] = []
         for item in items {
-            let itemData: [String: Any] = ["drinkId": item.id, "quantity": item.quantity]
+            let itemData: [String: Any] = ["name": item.name, "price": item.price, "quantity": item.quantity]
             itemsData.append(itemData)
         }
         

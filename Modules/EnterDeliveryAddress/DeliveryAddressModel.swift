@@ -10,6 +10,12 @@ import Foundation
 
 enum DeliveryAddressModel {
     
+    struct CartItem {
+        let name: String
+        let price: Int
+        let quantity: Int
+    }
+    
     struct Customer {
         let email: String
         let name: String

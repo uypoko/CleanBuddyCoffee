@@ -9,7 +9,8 @@
 import Foundation
 
 protocol CartInteractorInput {
-    func getCartItems()
+    func getPreviousCartItems()
     func deleteItem(id: String)
     func changeItemQuantity(itemId: String, quantity: Int)
+    func getFinalCartItems() -> [Cart.Item]
 }

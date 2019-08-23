@@ -11,7 +11,7 @@ import UIKit
 class CartViewController: UITableViewController {
 
     var output: CartViewOutput!
-    var items: [Cart.ItemViewModel] = []
+    var items: [Cart.Item] = []
     
     // MARK: Life cycle
     override func viewDidLoad() {
@@ -82,7 +82,7 @@ class CartViewController: UITableViewController {
 }
 
 extension CartViewController: CartViewInput {
-    func displayCartItems(items: [Cart.ItemViewModel]) {
+    func displayCartItems(items: [Cart.Item]) {
         self.items = items
         updatePriceTitle()
         tableView.reloadData()
