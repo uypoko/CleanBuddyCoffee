@@ -13,7 +13,7 @@ class CartPresenter: CartViewOutput {
     var router: CartRouterInput!
 
     func viewWillAppear() {
-        interactor.getPreviousCartItems()
+        interactor.getCartItems()
     }
     
     func deleteItemButtonTapped(id: String) {
@@ -25,13 +25,12 @@ class CartPresenter: CartViewOutput {
     }
     
     func confirmCartButtonTaped() {
-        let cartItems = interactor.getFinalCartItems()
-        router.routeToDeliveryAddress(cartItems: cartItems)
+        router.routeToDeliveryAddress()
     }
 }
 
 extension CartPresenter: CartInteractorOutput {
-    func didFetchCartItems(items: [Cart.Item]) {
+    func didFetchCartItems(items: [CartItem]) {
         view.displayCartItems(items: items)
     }
     

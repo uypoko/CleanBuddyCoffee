@@ -29,7 +29,7 @@ class CartItemCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func updateUI(item: Cart.Item) {
+    func updateUI(item: CartItem) {
         itemId = item.id
         nameLabel.text = item.name
         quantityLabel.text = "\(item.quantity)"

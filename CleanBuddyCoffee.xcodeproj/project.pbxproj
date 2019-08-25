@@ -28,7 +28,6 @@
 		940D466F230AD21000F20C22 /* CartRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94170387230AB1CA00BADB90 /* CartRouter.swift */; };
 		940D4670230AD21200F20C22 /* CartRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94170388230AB1CA00BADB90 /* CartRouterInput.swift */; };
 		940D4672230AD47E00F20C22 /* CartItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940D4671230AD47E00F20C22 /* CartItemCell.swift */; };
-		940D4674230ADAA800F20C22 /* CartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940D4673230ADAA800F20C22 /* CartModel.swift */; };
 		94170330230AAD0000BADB90 /* ListDrinksInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9417032F230AAD0000BADB90 /* ListDrinksInitializer.swift */; };
 		9417038A230AB1EE00BADB90 /* Cart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94170389230AB1EE00BADB90 /* Cart.storyboard */; };
 		9490DD17230566A7006A03E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9490DD16230566A7006A03E8 /* AppDelegate.swift */; };
@@ -64,13 +63,11 @@
 		94DC72A5230FD688006E814E /* SetAddressOnMap.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94DC7298230FD688006E814E /* SetAddressOnMap.storyboard */; };
 		94DC72A6230FD688006E814E /* SetAddressOnMapRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DC729A230FD688006E814E /* SetAddressOnMapRouterInput.swift */; };
 		94DC72A7230FD688006E814E /* SetAddressOnMapRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DC729B230FD688006E814E /* SetAddressOnMapRouter.swift */; };
-		94DC72AC230FD752006E814E /* CartLocalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DC72A9230FD752006E814E /* CartLocalService.swift */; };
+		94DC72AC230FD752006E814E /* LocalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DC72A9230FD752006E814E /* LocalService.swift */; };
 		94DC72AD230FD752006E814E /* CartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DC72AA230FD752006E814E /* CartItem.swift */; };
-		94DC72AE230FD752006E814E /* CartLocalProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DC72AB230FD752006E814E /* CartLocalProtocols.swift */; };
-		94DC72B6230FD7A7006E814E /* OrderingNetworkProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DC72B1230FD7A6006E814E /* OrderingNetworkProtocols.swift */; };
-		94DC72B7230FD7A7006E814E /* OrderingNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DC72B2230FD7A6006E814E /* OrderingNetworkService.swift */; };
-		94DC72B8230FD7A7006E814E /* MenuNetworkProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DC72B4230FD7A6006E814E /* MenuNetworkProtocols.swift */; };
-		94DC72B9230FD7A7006E814E /* MenuNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DC72B5230FD7A6006E814E /* MenuNetworkService.swift */; };
+		94DC72AE230FD752006E814E /* LocalServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DC72AB230FD752006E814E /* LocalServiceProtocol.swift */; };
+		94DC72B8230FD7A7006E814E /* RemoteServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DC72B4230FD7A6006E814E /* RemoteServiceProtocol.swift */; };
+		94DC72B9230FD7A7006E814E /* RemoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DC72B5230FD7A6006E814E /* RemoteService.swift */; };
 		94DC72CF230FD8AF006E814E /* DeliveryAddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DC72BD230FD8AF006E814E /* DeliveryAddressModel.swift */; };
 		94DC72D0230FD8AF006E814E /* DeliveryAddressPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DC72BF230FD8AF006E814E /* DeliveryAddressPresenter.swift */; };
 		94DC72D1230FD8AF006E814E /* DeliveryAddress.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94DC72C0230FD8AF006E814E /* DeliveryAddress.storyboard */; };
@@ -105,7 +102,6 @@
 		68639226B61F5F192142EB2E /* Pods-CleanBuddyCoffee.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CleanBuddyCoffee.release.xcconfig"; path = "Target Support Files/Pods-CleanBuddyCoffee/Pods-CleanBuddyCoffee.release.xcconfig"; sourceTree = "<group>"; };
 		8D80D4D56FB4E6A3BD21DB9E /* DrinkDetailViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DrinkDetailViewOutput.swift; sourceTree = "<group>"; };
 		940D4671230AD47E00F20C22 /* CartItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemCell.swift; sourceTree = "<group>"; };
-		940D4673230ADAA800F20C22 /* CartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartModel.swift; sourceTree = "<group>"; };
 		9417032F230AAD0000BADB90 /* ListDrinksInitializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListDrinksInitializer.swift; sourceTree = "<group>"; };
 		9417037A230AB1CA00BADB90 /* CartPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartPresenter.swift; sourceTree = "<group>"; };
 		9417037C230AB1CA00BADB90 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
@@ -154,13 +150,11 @@
 		94DC7298230FD688006E814E /* SetAddressOnMap.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SetAddressOnMap.storyboard; sourceTree = "<group>"; };
 		94DC729A230FD688006E814E /* SetAddressOnMapRouterInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetAddressOnMapRouterInput.swift; sourceTree = "<group>"; };
 		94DC729B230FD688006E814E /* SetAddressOnMapRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetAddressOnMapRouter.swift; sourceTree = "<group>"; };
-		94DC72A9230FD752006E814E /* CartLocalService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartLocalService.swift; sourceTree = "<group>"; };
+		94DC72A9230FD752006E814E /* LocalService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalService.swift; sourceTree = "<group>"; };
 		94DC72AA230FD752006E814E /* CartItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartItem.swift; sourceTree = "<group>"; };
-		94DC72AB230FD752006E814E /* CartLocalProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartLocalProtocols.swift; sourceTree = "<group>"; };
-		94DC72B1230FD7A6006E814E /* OrderingNetworkProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderingNetworkProtocols.swift; sourceTree = "<group>"; };
-		94DC72B2230FD7A6006E814E /* OrderingNetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderingNetworkService.swift; sourceTree = "<group>"; };
-		94DC72B4230FD7A6006E814E /* MenuNetworkProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuNetworkProtocols.swift; sourceTree = "<group>"; };
-		94DC72B5230FD7A6006E814E /* MenuNetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuNetworkService.swift; sourceTree = "<group>"; };
+		94DC72AB230FD752006E814E /* LocalServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalServiceProtocol.swift; sourceTree = "<group>"; };
+		94DC72B4230FD7A6006E814E /* RemoteServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteServiceProtocol.swift; sourceTree = "<group>"; };
+		94DC72B5230FD7A6006E814E /* RemoteService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteService.swift; sourceTree = "<group>"; };
 		94DC72BD230FD8AF006E814E /* DeliveryAddressModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeliveryAddressModel.swift; sourceTree = "<group>"; };
 		94DC72BF230FD8AF006E814E /* DeliveryAddressPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeliveryAddressPresenter.swift; sourceTree = "<group>"; };
 		94DC72C0230FD8AF006E814E /* DeliveryAddress.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DeliveryAddress.storyboard; sourceTree = "<group>"; };
@@ -259,7 +253,6 @@
 			isa = PBXGroup;
 			children = (
 				94170389230AB1EE00BADB90 /* Cart.storyboard */,
-				940D4673230ADAA800F20C22 /* CartModel.swift */,
 				94170378230AB1CA00BADB90 /* Presenter */,
 				9417037B230AB1CA00BADB90 /* View */,
 				9417037F230AB1CA00BADB90 /* Configurator */,
@@ -458,8 +451,7 @@
 			isa = PBXGroup;
 			children = (
 				94DC72A8230FD752006E814E /* Local */,
-				9417038B230AB29900BADB90 /* CoreData */,
-				94DC72AF230FD7A6006E814E /* Firebase */,
+				94DC72AF230FD7A6006E814E /* Remote */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -526,46 +518,29 @@
 		94DC72A8230FD752006E814E /* Local */ = {
 			isa = PBXGroup;
 			children = (
-				94DC72A9230FD752006E814E /* CartLocalService.swift */,
-				94DC72AA230FD752006E814E /* CartItem.swift */,
-				94DC72AB230FD752006E814E /* CartLocalProtocols.swift */,
+				94FEC59423128EBC00BFAC2C /* Entities */,
+				9417038B230AB29900BADB90 /* CoreData */,
+				94DC72A9230FD752006E814E /* LocalService.swift */,
+				94DC72AB230FD752006E814E /* LocalServiceProtocol.swift */,
 			);
 			path = Local;
 			sourceTree = "<group>";
 		};
-		94DC72AF230FD7A6006E814E /* Firebase */ = {
+		94DC72AF230FD7A6006E814E /* Remote */ = {
 			isa = PBXGroup;
 			children = (
-				94DC72B0230FD7A6006E814E /* Ordering */,
-				94DC72B3230FD7A6006E814E /* Menu */,
+				94DC72B4230FD7A6006E814E /* RemoteServiceProtocol.swift */,
+				94DC72B5230FD7A6006E814E /* RemoteService.swift */,
 			);
-			path = Firebase;
-			sourceTree = "<group>";
-		};
-		94DC72B0230FD7A6006E814E /* Ordering */ = {
-			isa = PBXGroup;
-			children = (
-				94DC72B1230FD7A6006E814E /* OrderingNetworkProtocols.swift */,
-				94DC72B2230FD7A6006E814E /* OrderingNetworkService.swift */,
-			);
-			path = Ordering;
-			sourceTree = "<group>";
-		};
-		94DC72B3230FD7A6006E814E /* Menu */ = {
-			isa = PBXGroup;
-			children = (
-				94DC72B4230FD7A6006E814E /* MenuNetworkProtocols.swift */,
-				94DC72B5230FD7A6006E814E /* MenuNetworkService.swift */,
-			);
-			path = Menu;
+			path = Remote;
 			sourceTree = "<group>";
 		};
 		94DC72BC230FD8AF006E814E /* EnterDeliveryAddress */ = {
 			isa = PBXGroup;
 			children = (
+				94DC72C0230FD8AF006E814E /* DeliveryAddress.storyboard */,
 				94DC72BD230FD8AF006E814E /* DeliveryAddressModel.swift */,
 				94DC72BE230FD8AF006E814E /* Presenter */,
-				94DC72C0230FD8AF006E814E /* DeliveryAddress.storyboard */,
 				94DC72C1230FD8AF006E814E /* View */,
 				94DC72C5230FD8AF006E814E /* Configurator */,
 				94DC72C8230FD8AF006E814E /* Interactor */,
@@ -638,6 +613,14 @@
 			);
 			name = Views;
 			path = ../../../BuddyCoffee/BuddyCoffee/Views;
+			sourceTree = "<group>";
+		};
+		94FEC59423128EBC00BFAC2C /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				94DC72AA230FD752006E814E /* CartItem.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		9C6AE345B97E27AA9E5411A8 /* Configurator */ = {
@@ -813,7 +796,7 @@
 				9490DD53230570B9006A03E8 /* MainViewController.swift in Sources */,
 				9490DD3D23056F4C006A03E8 /* ListDrinksModuleInput.swift in Sources */,
 				940D4665230AD1D700F20C22 /* CartConfigurator.swift in Sources */,
-				94DC72B8230FD7A7006E814E /* MenuNetworkProtocols.swift in Sources */,
+				94DC72B8230FD7A7006E814E /* RemoteServiceProtocol.swift in Sources */,
 				94DC729F230FD688006E814E /* SetAddressOnMapViewInput.swift in Sources */,
 				9490DD4023056F4C006A03E8 /* ListDrinksViewInput.swift in Sources */,
 				940D466D230AD20B00F20C22 /* CartInteractorInput.swift in Sources */,
@@ -826,7 +809,7 @@
 				9490DD4123056F4C006A03E8 /* ListDrinksViewController.swift in Sources */,
 				A48CC2522305AE240057000E /* DrinkTableViewCell.swift in Sources */,
 				9490DD4723056F4C006A03E8 /* ListDrinksRouterInput.swift in Sources */,
-				94DC72AC230FD752006E814E /* CartLocalService.swift in Sources */,
+				94DC72AC230FD752006E814E /* LocalService.swift in Sources */,
 				94170330230AAD0000BADB90 /* ListDrinksInitializer.swift in Sources */,
 				94DC729D230FD688006E814E /* SetAddressOnMapViewOutput.swift in Sources */,
 				940D4670230AD21200F20C22 /* CartRouterInput.swift in Sources */,
@@ -839,7 +822,6 @@
 				94DC72D6230FD8AF006E814E /* DeliveryAddressInitializer.swift in Sources */,
 				94DC72D0230FD8AF006E814E /* DeliveryAddressPresenter.swift in Sources */,
 				94DC729E230FD688006E814E /* SetAddressOnMapViewController.swift in Sources */,
-				94DC72B6230FD7A7006E814E /* OrderingNetworkProtocols.swift in Sources */,
 				9490DD4623056F4C006A03E8 /* ListDrinksInteractor.swift in Sources */,
 				94DC72A1230FD688006E814E /* SetAddressOnMapInitializer.swift in Sources */,
 				94DC72E9230FD947006E814E /* UIViewController+Extensions.swift in Sources */,
@@ -854,7 +836,6 @@
 				94DC72E6230FD907006E814E /* AddressTextView.swift in Sources */,
 				67F9DC57B9BFB05B83795F91 /* DrinkDetailModuleInput.swift in Sources */,
 				940D4672230AD47E00F20C22 /* CartItemCell.swift in Sources */,
-				94DC72B7230FD7A7006E814E /* OrderingNetworkService.swift in Sources */,
 				7F96B71F1887090F837D97A2 /* DrinkDetailPresenter.swift in Sources */,
 				940D466F230AD21000F20C22 /* CartRouter.swift in Sources */,
 				B485A6305376104DEDEFC7A0 /* DrinkDetailInteractorInput.swift in Sources */,
@@ -862,7 +843,6 @@
 				940D4668230AD1FC00F20C22 /* CartViewInput.swift in Sources */,
 				94DC72DB230FD8AF006E814E /* DeliveryAddressRouter.swift in Sources */,
 				94DC72DA230FD8AF006E814E /* DeliveryAddressRouterInput.swift in Sources */,
-				940D4674230ADAA800F20C22 /* CartModel.swift in Sources */,
 				94DC7352231004A0006E814E /* OrderCoreDataModel.xcdatamodeld in Sources */,
 				94DC72D7230FD8AF006E814E /* DeliveryAddressInteractorOutput.swift in Sources */,
 				94DC72D9230FD8AF006E814E /* DeliveryAddressInteractor.swift in Sources */,
@@ -873,8 +853,8 @@
 				94DC72DF230FD8E4006E814E /* UITextView+Extensions.swift in Sources */,
 				94DC72D4230FD8AF006E814E /* DeliveryAddressViewOutput.swift in Sources */,
 				DCDA4FD5508D83AF4EF11051 /* DrinkDetailConfigurator.swift in Sources */,
-				94DC72AE230FD752006E814E /* CartLocalProtocols.swift in Sources */,
-				94DC72B9230FD7A7006E814E /* MenuNetworkService.swift in Sources */,
+				94DC72AE230FD752006E814E /* LocalServiceProtocol.swift in Sources */,
+				94DC72B9230FD7A7006E814E /* RemoteService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

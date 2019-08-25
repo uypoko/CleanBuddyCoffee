@@ -27,10 +27,10 @@ class DrinkDetailModuleConfigurator {
 
         let interactor = DrinkDetailInteractor()
         interactor.output = presenter
-        let service: DrinkDetailService = MenuNetworkService()
-        interactor.networkService = service
-        let cartService: DrinkDetailModuleLocalCartService =  CartLocalService()
-        interactor.cartService =  cartService
+        let remoteService = RemoteService()
+        interactor.remoteService = remoteService
+        let localService =  LocalService()
+        interactor.localService =  localService
         
         presenter.interactor = interactor
         viewController.output = presenter

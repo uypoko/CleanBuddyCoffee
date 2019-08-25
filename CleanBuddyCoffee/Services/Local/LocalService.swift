@@ -8,50 +8,47 @@
 
 import Foundation
 
-class CartLocalService {
+class LocalService {
     
     private static var items: [CartItem] = []
     
 }
 
-extension CartLocalService: GetCartItemsLocalService {
+extension LocalService: LocalServiceProtocol {
     func getCartItems() -> [CartItem] {
-         return CartLocalService.items
+         return LocalService.items
     }
-}
-
-extension CartLocalService: DrinkDetailModuleLocalCartService {
     
-    func addItem(drinkId: String, quantity: Int) {
-        if let item = CartLocalService.items.first(where: {$0.id == drinkId}) {
+    func isItemInCart(id: String) -> Bool {
+        return LocalService.items.contains(where: {$0.id == id})
+    }
+    
+    func addExistingItem(drinkId: String, quantity: Int) {
+        if let item = LocalService.items.first(where: {$0.id == drinkId}) {
             item.quantity += quantity
-        } else {
-            CartLocalService.items.append(CartItem(id: drinkId, quantity: quantity))
         }
     }
     
-}
-
-extension CartLocalService: CartModuleLocalService {
+    func addNewItem(item: CartItem) {
+        LocalService.items.append(item)
+    }
     
     func changeItemQuantity(drinkId: String, quantity: Int) {
-        guard let index = CartLocalService.items.firstIndex(where: {$0.id == drinkId}) else { return }
-        CartLocalService.items[index].quantity = quantity
+        guard let index = LocalService.items.firstIndex(where: {$0.id == drinkId}) else { return }
+        LocalService.items[index].quantity = quantity
     }
     
     func removeItem(drinkId: String) {
-        guard let index = CartLocalService.items.firstIndex(where: {$0.id == drinkId}) else { return }
-        CartLocalService.items.remove(at: index)
+        guard let index = LocalService.items.firstIndex(where: {$0.id == drinkId}) else { return }
+        LocalService.items.remove(at: index)
     }
-}
-
-extension CartLocalService: DeliveryAddressModuleLocalService {
+    
     func removeCartItems() {
-        CartLocalService.items.removeAll()
+        LocalService.items.removeAll()
     }
 }
 
-extension CartLocalService: AppLocalService {
+extension LocalService: AppLocalServiceProtocol {
     var archiveURL: URL {
         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         return documentsDirectory.appendingPathComponent("cart").appendingPathExtension("plist")
@@ -59,7 +56,7 @@ extension CartLocalService: AppLocalService {
     
     func encodeCart() {
         let propertyListEncoder = PropertyListEncoder()
-        let encodedCart = try? propertyListEncoder.encode(CartLocalService.items)
+        let encodedCart = try? propertyListEncoder.encode(LocalService.items)
         try? encodedCart?.write(to: archiveURL)
     }
     
@@ -69,7 +66,7 @@ extension CartLocalService: AppLocalService {
         
         let propertyListDecoder = PropertyListDecoder()
         if let cartData = try? Data.init(contentsOf: archiveURL) {
-            CartLocalService.items = (try? propertyListDecoder.decode(Array<CartItem>.self, from: cartData)) ?? []
+            LocalService.items = (try? propertyListDecoder.decode(Array<CartItem>.self, from: cartData)) ?? []
         }
     }
 }

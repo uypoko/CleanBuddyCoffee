@@ -8,20 +8,10 @@
 
 import Foundation
 
-protocol ListDrinksService {
-    
+protocol RemoteServiceProtocol {
     func fetchDrinks(completion: @escaping ([ListDrinks.Drink]?) -> Void)
     func fetchDrinkImage(drinkName: String, completion: @escaping (Data?) -> Void)
-    
-}
-
-protocol DrinkDetailService {
-    
     func fetchDrink(for id: String, completion: @escaping (DrinkDetail.Drink?) -> Void)
     func fetchDrinkDetailImage(drinkId: String, completion: @escaping (Data?) -> Void)
-    
-}
-
-protocol CartNetworkService {
-    func fetchDrinks(drinkIds: [String], completion: @escaping ([Cart.FetchedItem]?) -> Void)
+    func placeOrder(customer: DeliveryAddressModel.Customer, items: [CartItem], completion: @escaping (Error?) -> Void)
 }

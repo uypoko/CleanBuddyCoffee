@@ -28,8 +28,8 @@ class ListDrinksModuleConfigurator {
 
         let interactor = ListDrinksInteractor()
         interactor.output = presenter
-        let service: ListDrinksService = MenuNetworkService()
-        interactor.service = service
+        let service = RemoteService()
+        interactor.remoteService = service
 
         presenter.interactor = interactor
         viewController.output = presenter

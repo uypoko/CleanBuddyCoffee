@@ -8,24 +8,17 @@
 
 import Foundation
 
-protocol GetCartItemsLocalService {
+protocol LocalServiceProtocol {
     func getCartItems() -> [CartItem]
-}
-
-protocol DrinkDetailModuleLocalCartService {
-    func addItem(drinkId: String, quantity: Int)
-}
-
-protocol CartModuleLocalService {
+    func isItemInCart(id: String) -> Bool
+    func addExistingItem(drinkId: String, quantity: Int)
+    func addNewItem(item: CartItem)
     func changeItemQuantity(drinkId: String, quantity: Int)
     func removeItem(drinkId: String)
-}
-
-protocol DeliveryAddressModuleLocalService {
     func removeCartItems()
 }
 
-protocol AppLocalService {
+protocol AppLocalServiceProtocol {
     var archiveURL: URL { get }
     
     func encodeCart()

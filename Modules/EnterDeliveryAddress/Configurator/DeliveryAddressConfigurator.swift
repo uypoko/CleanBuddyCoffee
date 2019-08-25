@@ -10,14 +10,14 @@ import UIKit
 
 class DeliveryAddressModuleConfigurator {
 
-    func configureModuleForViewInput<UIViewController>(viewInput: UIViewController, cartItems: [Cart.Item]) {
+    func configureModuleForViewInput<UIViewController>(viewInput: UIViewController) {
 
         if let viewController = viewInput as? DeliveryAddressViewController {
-            configure(viewController: viewController, cartItems: cartItems)
+            configure(viewController: viewController)
         }
     }
 
-    private func configure(viewController: DeliveryAddressViewController, cartItems: [Cart.Item]) {
+    private func configure(viewController: DeliveryAddressViewController) {
 
         let router = DeliveryAddressRouter()
         router.sourceView = viewController
@@ -28,11 +28,10 @@ class DeliveryAddressModuleConfigurator {
 
         let interactor = DeliveryAddressInteractor()
         interactor.output = presenter
-        let localService: DeliveryAddressModuleLocalService & GetCartItemsLocalService = CartLocalService()
+        let localService = LocalService()
         interactor.localService = localService
-        let networkService = OrderingNetworkService()
-        interactor.networkService = networkService
-        interactor.cartItems = cartItems
+        let remoteService = RemoteService()
+        interactor.remoteService = remoteService
 
         presenter.interactor = interactor
         viewController.output = presenter

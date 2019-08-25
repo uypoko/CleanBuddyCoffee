@@ -28,10 +28,10 @@ class CartModuleConfigurator {
 
         let interactor = CartInteractor()
         interactor.output = presenter
-        let localService: CartModuleLocalService & GetCartItemsLocalService = CartLocalService()
+        let localService = LocalService()
         interactor.localService = localService
-        let networkService = MenuNetworkService()
-        interactor.networkService = networkService
+        let remoteService = RemoteService()
+        interactor.remoteService = remoteService
 
         presenter.interactor = interactor
         viewController.output = presenter

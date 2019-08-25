@@ -9,11 +9,11 @@
 class DrinkDetailInteractor: DrinkDetailInteractorInput {
 
     weak var output: DrinkDetailInteractorOutput!
-    var networkService: DrinkDetailService?
-    var cartService: DrinkDetailModuleLocalCartService?
+    var localService: LocalServiceProtocol!
+    var remoteService: RemoteServiceProtocol?
     
     func fetchDrink(drinkId: String) {
-        networkService?.fetchDrink(for: drinkId) { [weak self] drink in
+        remoteService?.fetchDrink(for: drinkId) { [weak self] drink in
             if let drink = drink {
                 self?.output.didFetchDrink(drink: drink)
             }
@@ -21,7 +21,7 @@ class DrinkDetailInteractor: DrinkDetailInteractorInput {
     }
     
     func fetchDrinkImage(drinkId: String) {
-        networkService?.fetchDrinkDetailImage(drinkId: drinkId) { [weak self] data in
+        remoteService?.fetchDrinkDetailImage(drinkId: drinkId) { [weak self] data in
             if let data = data {
                 self?.output.didFetchDrinkImage(data: data)
             }
@@ -29,7 +29,15 @@ class DrinkDetailInteractor: DrinkDetailInteractorInput {
     }
     
     func addToCart(drinkId: String, quantity: Int) {
-        cartService?.addItem(drinkId: drinkId, quantity: quantity)
+        if localService.isItemInCart(id: drinkId) {
+            localService.addExistingItem(drinkId: drinkId, quantity: quantity)
+        } else {
+            remoteService?.fetchDrink(for: drinkId) { [weak self] drink in
+                guard let drink = drink else { return }
+                let item = CartItem(id: drink.id, name: drink.name, price: drink.price, quantity: quantity)
+                self?.localService.addNewItem(item: item)
+            }
+        }
     }
     
 }

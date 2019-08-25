@@ -9,10 +9,10 @@
 class ListDrinksInteractor: ListDrinksInteractorInput {
 
     weak var output: ListDrinksInteractorOutput!
-    var service: ListDrinksService?
+    var remoteService: RemoteServiceProtocol?
 
     func fetchDrinks() {
-        service?.fetchDrinks { [weak self] drinks in
+        remoteService?.fetchDrinks { [weak self] drinks in
             if let drinks = drinks {
                 self?.output.didFetchDrinks(drinks: drinks)
             }
@@ -20,7 +20,7 @@ class ListDrinksInteractor: ListDrinksInteractorInput {
     }
     
     func fetchImage(drinkName: String) {
-        service?.fetchDrinkImage(drinkName: drinkName) { [weak self] data in
+        remoteService?.fetchDrinkImage(drinkName: drinkName) { [weak self] data in
             if let data = data {
                 self?.output.didFetchImage(for: drinkName, data: data)
             }

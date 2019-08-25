@@ -10,14 +10,10 @@ import Foundation
 
 enum ListDrinks {
     
-    struct Drink: Equatable {
+    struct Drink {
         let id: String
         let name: String
         let price: Int
-        
-        static func ==(lhs: Drink, rhs: Drink) -> Bool {
-            return lhs.id == rhs.id
-        }
     }
     
     struct DrinkViewModel {

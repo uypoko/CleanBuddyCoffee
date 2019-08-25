@@ -9,7 +9,7 @@
 import Foundation
 
 protocol CartInteractorOutput: class {
-    func didFetchCartItems(items: [Cart.Item])
+    func didFetchCartItems(items: [CartItem])
     func didDeleteItem(id: String)
     func didChangeItemQuantity(itemId: String, quantity: Int)
 }
