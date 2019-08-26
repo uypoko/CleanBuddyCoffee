@@ -7,5 +7,6 @@
 //
 
 class SetAddressOnMapRouter: SetAddressOnMapRouterInput {
-
+    weak var sourceView: SetAddressOnMapViewController!
+    var appBuilderDelegate: AppBuilderDelegate!
 }

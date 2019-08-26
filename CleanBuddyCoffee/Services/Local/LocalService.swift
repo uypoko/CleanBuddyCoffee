@@ -10,41 +10,41 @@ import Foundation
 
 class LocalService {
     
-    private static var items: [CartItem] = []
+    var items: [CartItem] = []
     
 }
 
 extension LocalService: LocalServiceProtocol {
     func getCartItems() -> [CartItem] {
-         return LocalService.items
+        return items
     }
     
     func isItemInCart(id: String) -> Bool {
-        return LocalService.items.contains(where: {$0.id == id})
+        return items.contains(where: {$0.id == id})
     }
     
     func addExistingItem(drinkId: String, quantity: Int) {
-        if let item = LocalService.items.first(where: {$0.id == drinkId}) {
+        if let item = items.first(where: {$0.id == drinkId}) {
             item.quantity += quantity
         }
     }
     
     func addNewItem(item: CartItem) {
-        LocalService.items.append(item)
+        items.append(item)
     }
     
     func changeItemQuantity(drinkId: String, quantity: Int) {
-        guard let index = LocalService.items.firstIndex(where: {$0.id == drinkId}) else { return }
-        LocalService.items[index].quantity = quantity
+        guard let index = items.firstIndex(where: {$0.id == drinkId}) else { return }
+        items[index].quantity = quantity
     }
     
     func removeItem(drinkId: String) {
-        guard let index = LocalService.items.firstIndex(where: {$0.id == drinkId}) else { return }
-        LocalService.items.remove(at: index)
+        guard let index = items.firstIndex(where: {$0.id == drinkId}) else { return }
+        items.remove(at: index)
     }
     
     func removeCartItems() {
-        LocalService.items.removeAll()
+        items.removeAll()
     }
 }
 
@@ -56,7 +56,7 @@ extension LocalService: AppLocalServiceProtocol {
     
     func encodeCart() {
         let propertyListEncoder = PropertyListEncoder()
-        let encodedCart = try? propertyListEncoder.encode(LocalService.items)
+        let encodedCart = try? propertyListEncoder.encode(items)
         try? encodedCart?.write(to: archiveURL)
     }
     
@@ -66,7 +66,7 @@ extension LocalService: AppLocalServiceProtocol {
         
         let propertyListDecoder = PropertyListDecoder()
         if let cartData = try? Data.init(contentsOf: archiveURL) {
-            LocalService.items = (try? propertyListDecoder.decode(Array<CartItem>.self, from: cartData)) ?? []
+            items = (try? propertyListDecoder.decode(Array<CartItem>.self, from: cartData)) ?? []
         }
     }
 }

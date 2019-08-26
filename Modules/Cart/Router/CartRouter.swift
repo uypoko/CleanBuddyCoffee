@@ -8,10 +8,10 @@
 
 class CartRouter: CartRouterInput {
     weak var sourceView: CartViewController!
+    var appBuilderDelegate: AppBuilderDelegate!
     
     func routeToDeliveryAddress() {
-        let destination = DeliveryAddressViewController.instantiate(fromAppStoryboard: .DeliveryAddress)
-        DeliveryAddressModuleConfigurator().configureModuleForViewInput(viewInput: destination)
-        sourceView.navigationController?.pushViewController(destination, animated: true)
+        let destinationView = appBuilderDelegate.configureEnterDeliveryAddressModule()
+        sourceView.navigationController?.pushViewController(destinationView, animated: true)
     }
 }

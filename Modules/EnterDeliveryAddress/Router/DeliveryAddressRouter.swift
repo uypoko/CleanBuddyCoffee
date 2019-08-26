@@ -9,14 +9,14 @@
 class DeliveryAddressRouter: DeliveryAddressRouterInput {
     
     weak var sourceView: DeliveryAddressViewController!
+    var appBuilderDelegate: AppBuilderDelegate!
     
     func routeToCartView() {
         sourceView.navigationController?.popViewController(animated: true)
     }
     
     func routeToMapView() {
-        let mapView = SetAddressOnMapViewController.instantiate(fromAppStoryboard: .SetAddressOnMap)
-        SetAddressOnMapModuleConfigurator().configureModuleForViewInput(viewInput: mapView)
+        let mapView = appBuilderDelegate.configureSetAddressOnMapModule()
         sourceView.navigationController?.pushViewController(mapView, animated: true)
     }
     

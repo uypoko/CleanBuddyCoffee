@@ -9,27 +9,32 @@
 import UIKit
 
 class DrinkDetailModuleConfigurator {
-
-    func configureModuleForViewInput<UIViewController>(viewInput: UIViewController, drinkId: String) {
-
-        if let viewController = viewInput as? DrinkDetailViewController {
-            configure(viewController: viewController, drinkId: drinkId)
-        }
+    
+    let moduleDependency: ModuleDependency
+    let appBuilderDelegate: AppBuilderDelegate
+    
+    init(moduleDependency: ModuleDependency, appBuilderDelegate: AppBuilderDelegate) {
+        self.moduleDependency = moduleDependency
+        self.appBuilderDelegate = appBuilderDelegate
     }
 
-    private func configure(viewController: DrinkDetailViewController, drinkId: String) {
+    func configureModuleForViewInput<UIViewController>(viewInput: UIViewController, drinkId: String) {
+        guard let viewController = viewInput as? DrinkDetailViewController else { return}
+        
         viewController.drinkId = drinkId
         let router = DrinkDetailRouter()
-
+        router.sourceView = viewController
+        router.appBuilderDelegate = appBuilderDelegate
+        
         let presenter = DrinkDetailPresenter()
         presenter.view = viewController
         presenter.router = router
-
+        
         let interactor = DrinkDetailInteractor()
         interactor.output = presenter
-        let remoteService = RemoteService()
+        let remoteService = moduleDependency.remoteService
         interactor.remoteService = remoteService
-        let localService =  LocalService()
+        let localService =  moduleDependency.localService
         interactor.localService =  localService
         
         presenter.interactor = interactor

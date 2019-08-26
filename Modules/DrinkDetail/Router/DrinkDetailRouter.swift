@@ -7,5 +7,6 @@
 //
 
 class DrinkDetailRouter: DrinkDetailRouterInput {
-
+    weak var sourceView: DrinkDetailViewController!
+    var appBuilderDelegate: AppBuilderDelegate!
 }

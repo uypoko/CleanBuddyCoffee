@@ -10,29 +10,30 @@ import UIKit
 
 class CartModuleConfigurator {
 
-    func configureModuleForViewInput<UIViewController>(viewInput: UIViewController) {
-
-        if let viewController = viewInput as? CartViewController {
-            configure(viewController: viewController)
-        }
+    let moduleDependency: ModuleDependency
+    let appBuilderDelegate: AppBuilderDelegate
+    
+    init(moduleDependency: ModuleDependency, appBuilderDelegate: AppBuilderDelegate) {
+        self.moduleDependency = moduleDependency
+        self.appBuilderDelegate = appBuilderDelegate
     }
-
-    private func configure(viewController: CartViewController) {
-
+    
+    func configureModuleForViewInput<UIViewController>(viewInput: UIViewController) {
+        guard let viewController = viewInput as? CartViewController else { return }
+        
         let router = CartRouter()
         router.sourceView = viewController
-
+        router.appBuilderDelegate = appBuilderDelegate
+        
         let presenter = CartPresenter()
         presenter.view = viewController
         presenter.router = router
-
+        
         let interactor = CartInteractor()
         interactor.output = presenter
-        let localService = LocalService()
-        interactor.localService = localService
-        let remoteService = RemoteService()
-        interactor.remoteService = remoteService
-
+        interactor.localService = moduleDependency.localService
+        interactor.remoteService = moduleDependency.remoteService
+        
         presenter.interactor = interactor
         viewController.output = presenter
     }

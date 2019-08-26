@@ -9,28 +9,30 @@
 import UIKit
 
 class ListDrinksModuleConfigurator {
-
+    
+    let moduleDependency: ModuleDependency
+    let appBuilderDelegate: AppBuilderDelegate
+    
+    init(moduleDependency: ModuleDependency, appBuilderDelegate: AppBuilderDelegate) {
+        self.moduleDependency = moduleDependency
+        self.appBuilderDelegate = appBuilderDelegate
+    }
+    
     func configureModuleForViewInput<UIViewController>(viewInput: UIViewController) {
 
-        if let viewController = viewInput as? ListDrinksViewController {
-            configure(viewController: viewController)
-        }
-    }
-
-    private func configure(viewController: ListDrinksViewController) {
-
+        guard let viewController = viewInput as? ListDrinksViewController else { return }
+        
         let router = ListDrinksRouter()
         router.sourceView = viewController
-
+        router.appBuilderDelegate = appBuilderDelegate
+        
         let presenter = ListDrinksPresenter()
         presenter.view = viewController
         presenter.router = router
-
+        
         let interactor = ListDrinksInteractor()
         interactor.output = presenter
-        let service = RemoteService()
-        interactor.remoteService = service
-
+        interactor.remoteService = moduleDependency.remoteService
         presenter.interactor = interactor
         viewController.output = presenter
     }

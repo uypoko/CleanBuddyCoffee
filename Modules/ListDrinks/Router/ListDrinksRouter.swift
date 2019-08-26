@@ -9,11 +9,11 @@
 class ListDrinksRouter: ListDrinksRouterInput {
     
     weak var sourceView: ListDrinksViewController!
+    var appBuilderDelegate: AppBuilderDelegate!
     
     func routeToDrinkDetail(drinkId: String) {
-        let destination = DrinkDetailViewController.instantiate(fromAppStoryboard: .DrinkDetail)
-        DrinkDetailModuleConfigurator().configureModuleForViewInput(viewInput: destination, drinkId: drinkId)
-        sourceView.navigationController?.pushViewController(destination, animated: true)
+        let destinationView = appBuilderDelegate.configureDrinkDetailModule(drinkId: drinkId)
+        sourceView.navigationController?.pushViewController(destinationView, animated: true)
     }
 
 }

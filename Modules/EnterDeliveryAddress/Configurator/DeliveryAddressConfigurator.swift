@@ -9,30 +9,31 @@
 import UIKit
 
 class DeliveryAddressModuleConfigurator {
-
-    func configureModuleForViewInput<UIViewController>(viewInput: UIViewController) {
-
-        if let viewController = viewInput as? DeliveryAddressViewController {
-            configure(viewController: viewController)
-        }
+    
+    let moduleDependency: ModuleDependency
+    let appBuilderDelegate: AppBuilderDelegate
+    
+    init(moduleDependency: ModuleDependency, appBuilderDelegate: AppBuilderDelegate) {
+        self.moduleDependency = moduleDependency
+        self.appBuilderDelegate = appBuilderDelegate
     }
 
-    private func configure(viewController: DeliveryAddressViewController) {
-
+    func configureModuleForViewInput<UIViewController>(viewInput: UIViewController) {
+        guard let viewController = viewInput as? DeliveryAddressViewController else { return }
+        
         let router = DeliveryAddressRouter()
         router.sourceView = viewController
-
+        router.appBuilderDelegate = appBuilderDelegate
+        
         let presenter = DeliveryAddressPresenter()
         presenter.view = viewController
         presenter.router = router
-
+        
         let interactor = DeliveryAddressInteractor()
         interactor.output = presenter
-        let localService = LocalService()
-        interactor.localService = localService
-        let remoteService = RemoteService()
-        interactor.remoteService = remoteService
-
+        interactor.localService = moduleDependency.localService
+        interactor.remoteService = moduleDependency.remoteService
+        
         presenter.interactor = interactor
         viewController.output = presenter
     }

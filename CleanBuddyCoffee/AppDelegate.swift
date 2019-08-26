@@ -19,9 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         FirebaseApp.configure()
         
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = MainBuilder().buildModule()
-        window?.makeKeyAndVisible()
+        let appBuilder = AppBuilder()
+        window?.rootViewController = appBuilder.build()
         
         appLocalService.decodeCart()
         return true
@@ -49,7 +48,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
 
 }
 
