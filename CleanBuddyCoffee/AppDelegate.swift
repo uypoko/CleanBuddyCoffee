@@ -13,16 +13,16 @@ import Firebase
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    let appLocalService: AppLocalServiceProtocol = LocalService()
+    let localService = LocalService()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
+        // Restore cart
+        localService.decodeCart()
         
-        let appBuilder = AppBuilder()
+        let appBuilder = AppBuilder(localService: localService)
         window?.rootViewController = appBuilder.build()
-        
-        appLocalService.decodeCart()
         return true
     }
 
@@ -32,7 +32,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
-        appLocalService.encodeCart()
+        // Save cart
+        localService.encodeCart()
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     }

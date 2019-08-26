@@ -13,8 +13,8 @@ class ModuleDependency {
     let localService: LocalServiceProtocol
     let remoteService: RemoteServiceProtocol
     
-    init() {
-        localService = LocalService()
+    init(localService: LocalServiceProtocol) {
+        self.localService = localService
         remoteService = RemoteService()
     }
     

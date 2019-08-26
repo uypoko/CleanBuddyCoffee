@@ -12,8 +12,8 @@ class AppBuilder {
     
     let moduleDependency: ModuleDependency
     
-    init() {
-        moduleDependency = ModuleDependency()
+    init(localService: LocalServiceProtocol) {
+        moduleDependency = ModuleDependency(localService: localService)
     }
     
     func build() -> UIViewController {

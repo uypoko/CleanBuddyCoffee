@@ -513,7 +513,7 @@
 		94DC72A8230FD752006E814E /* Local */ = {
 			isa = PBXGroup;
 			children = (
-				94FEC59423128EBC00BFAC2C /* Entities */,
+				94FEC59423128EBC00BFAC2C /* Models */,
 				9417038B230AB29900BADB90 /* CoreData */,
 				94DC72A9230FD752006E814E /* LocalService.swift */,
 				94DC72AB230FD752006E814E /* LocalServiceProtocol.swift */,
@@ -609,12 +609,12 @@
 			path = ../../../BuddyCoffee/BuddyCoffee/Views;
 			sourceTree = "<group>";
 		};
-		94FEC59423128EBC00BFAC2C /* Entities */ = {
+		94FEC59423128EBC00BFAC2C /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				94DC72AA230FD752006E814E /* CartItem.swift */,
 			);
-			path = Entities;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		9C6AE345B97E27AA9E5411A8 /* Configurator */ = {
