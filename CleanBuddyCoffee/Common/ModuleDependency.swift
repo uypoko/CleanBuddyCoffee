@@ -12,9 +12,11 @@ class ModuleDependency {
     
     let localService: LocalServiceProtocol
     let remoteService: RemoteServiceProtocol
+    let coreDataStore: CoreDataStoreProtocol
     
-    init(localService: LocalServiceProtocol) {
+    init(localService: LocalServiceProtocol, coreDataStore: CoreDataStoreProtocol) {
         self.localService = localService
+        self.coreDataStore = coreDataStore
         remoteService = RemoteService()
     }
     

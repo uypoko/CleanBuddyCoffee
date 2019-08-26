@@ -14,6 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     let localService = LocalService()
+    let coreDataStore = CoreDataStore()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -21,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Restore cart
         localService.decodeCart()
         
-        let appBuilder = AppBuilder(localService: localService)
+        let appBuilder = AppBuilder(localService: localService, coreDataStore: coreDataStore)
         window?.rootViewController = appBuilder.build()
         return true
     }
@@ -47,6 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
+        coreDataStore.saveContext()
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
