@@ -18,15 +18,16 @@ class DeliveryAddressModuleConfigurator {
         self.appBuilderDelegate = appBuilderDelegate
     }
 
-    func configureModuleForViewInput<UIViewController>(viewInput: UIViewController) {
-        guard let viewController = viewInput as? DeliveryAddressViewController else { return }
+    func configure() -> UIViewController {
+        let storyboard = UIStoryboard(name: "DeliveryAddress", bundle: nil)
+        let view = storyboard.instantiateViewController(withIdentifier: "DeliveryAddressViewController") as! DeliveryAddressViewController
         
         let router = DeliveryAddressRouter()
-        router.sourceView = viewController
+        router.sourceView = view
         router.appBuilderDelegate = appBuilderDelegate
         
         let presenter = DeliveryAddressPresenter()
-        presenter.view = viewController
+        presenter.view = view
         presenter.router = router
         
         let interactor = DeliveryAddressInteractor()
@@ -35,7 +36,9 @@ class DeliveryAddressModuleConfigurator {
         interactor.remoteService = moduleDependency.remoteService
         
         presenter.interactor = interactor
-        viewController.output = presenter
+        view.output = presenter
+        
+        return view
     }
 
 }

@@ -18,15 +18,17 @@ class CartModuleConfigurator {
         self.appBuilderDelegate = appBuilderDelegate
     }
     
-    func configureModuleForViewInput<UIViewController>(viewInput: UIViewController) {
-        guard let viewController = viewInput as? CartViewController else { return }
+    func configure() -> UIViewController {
+        let cartStoryboard = UIStoryboard(name: "Cart", bundle: nil)
+        let cartNavigationController = cartStoryboard.instantiateViewController(withIdentifier: "CartNavigationController") as! UINavigationController
+        let cartView = cartNavigationController.viewControllers[0] as! CartViewController
         
         let router = CartRouter()
-        router.sourceView = viewController
+        router.sourceView = cartView
         router.appBuilderDelegate = appBuilderDelegate
         
         let presenter = CartPresenter()
-        presenter.view = viewController
+        presenter.view = cartView
         presenter.router = router
         
         let interactor = CartInteractor()
@@ -35,7 +37,9 @@ class CartModuleConfigurator {
         interactor.remoteService = moduleDependency.remoteService
         
         presenter.interactor = interactor
-        viewController.output = presenter
+        cartView.output = presenter
+        
+        return cartNavigationController
     }
 
 }

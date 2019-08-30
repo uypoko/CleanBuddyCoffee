@@ -12,51 +12,43 @@ class AppBuilder {
     
     let moduleDependency: ModuleDependency
     
-    init(localService: LocalServiceProtocol, coreDataStore: CoreDataStoreProtocol) {
-        moduleDependency = ModuleDependency(localService: localService, coreDataStore: coreDataStore)
+    init(moduleDependency: ModuleDependency) {
+        self.moduleDependency = moduleDependency
     }
     
     func build() -> UIViewController {
-        let mainView = MainViewController.instantiate(fromAppStoryboard: .Main)
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let mainTabBarView = mainStoryboard.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
+        
         // Home Tab
-        let listDrinksView = ListDrinksViewController.instantiate(fromAppStoryboard: .ListDrinks)
-        let listDrinksNavigationController = UINavigationController(rootViewController: listDrinksView)
-        let homeTabBarItem = UITabBarItem(title: "List", image: UIImage(named: "baseline_home_black_36pt"), selectedImage: nil)
-        listDrinksNavigationController.tabBarItem = homeTabBarItem
-        ListDrinksModuleConfigurator(moduleDependency: moduleDependency, appBuilderDelegate: self).configureModuleForViewInput(viewInput: listDrinksView)
-        
+        let listDrinksConfigurator = ListDrinksModuleConfigurator(moduleDependency: moduleDependency, appBuilderDelegate: self)
+        let listDrinksView = listDrinksConfigurator.configure()
         //Cart Tab
-        let cartView = CartViewController.instantiate(fromAppStoryboard: .Cart)
-        let cartNavigationController = UINavigationController(rootViewController: cartView)
-        let cartTabBarItem = UITabBarItem(title: "Cart", image: UIImage(named: "baseline_shopping_cart_black_36pt"), selectedImage: nil)
-        cartNavigationController.tabBarItem = cartTabBarItem
-        CartModuleConfigurator(moduleDependency: moduleDependency, appBuilderDelegate: self).configureModuleForViewInput(viewInput: cartView)
+        let cartConfigurator = CartModuleConfigurator(moduleDependency: moduleDependency, appBuilderDelegate: self)
+        let cartDrinksView = cartConfigurator.configure()
         
-        mainView.viewControllers = [listDrinksNavigationController, cartNavigationController]
-        return mainView
+        mainTabBarView.viewControllers = [listDrinksView, cartDrinksView]
+        return mainTabBarView
     }
     
 }
 
 extension AppBuilder: AppBuilderDelegate {
-    func configureDrinkDetailModule(drinkId: String) -> DrinkDetailViewController {
-        let view = DrinkDetailViewController.instantiate(fromAppStoryboard: .DrinkDetail)
+    func configureDrinkDetailModule(drinkId: String) -> UIViewController {
         let configurator = DrinkDetailModuleConfigurator(moduleDependency: moduleDependency, appBuilderDelegate: self)
-        configurator.configureModuleForViewInput(viewInput: view, drinkId: drinkId)
+        let view = configurator.configure(drinkId: drinkId)
         return view
     }
     
-    func configureEnterDeliveryAddressModule() -> DeliveryAddressViewController {
-        let view = DeliveryAddressViewController.instantiate(fromAppStoryboard: .DeliveryAddress)
+    func configureEnterDeliveryAddressModule() -> UIViewController {
         let configurator = DeliveryAddressModuleConfigurator(moduleDependency: moduleDependency, appBuilderDelegate: self)
-        configurator.configureModuleForViewInput(viewInput: view)
+        let view = configurator.configure()
         return view
     }
     
-    func configureSetAddressOnMapModule() -> SetAddressOnMapViewController {
-        let view = SetAddressOnMapViewController.instantiate(fromAppStoryboard: .SetAddressOnMap)
+    func configureSetAddressOnMapModule() -> UIViewController {
         let configurator = SetAddressOnMapModuleConfigurator(moduleDependency: moduleDependency, appBuilderDelegate: self)
-        configurator.configureModuleForViewInput(viewInput: view)
+        let view = configurator.configure()
         return view
     }
 }

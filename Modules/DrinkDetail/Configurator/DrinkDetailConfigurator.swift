@@ -18,16 +18,17 @@ class DrinkDetailModuleConfigurator {
         self.appBuilderDelegate = appBuilderDelegate
     }
 
-    func configureModuleForViewInput<UIViewController>(viewInput: UIViewController, drinkId: String) {
-        guard let viewController = viewInput as? DrinkDetailViewController else { return}
+    func configure(drinkId: String) -> UIViewController {
+        let storyboard = UIStoryboard(name: "DrinkDetail", bundle: nil)
+        let view = storyboard.instantiateViewController(withIdentifier: "DrinkDetailViewController") as! DrinkDetailViewController
         
-        viewController.drinkId = drinkId
+        view.drinkId = drinkId
         let router = DrinkDetailRouter()
-        router.sourceView = viewController
+        router.sourceView = view
         router.appBuilderDelegate = appBuilderDelegate
         
         let presenter = DrinkDetailPresenter()
-        presenter.view = viewController
+        presenter.view = view
         presenter.router = router
         
         let interactor = DrinkDetailInteractor()
@@ -38,7 +39,9 @@ class DrinkDetailModuleConfigurator {
         interactor.localService =  localService
         
         presenter.interactor = interactor
-        viewController.output = presenter
+        view.output = presenter
+        
+        return view
     }
 
 }

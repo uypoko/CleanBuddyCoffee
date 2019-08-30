@@ -22,7 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Restore cart
         localService.decodeCart()
         
-        let appBuilder = AppBuilder(localService: localService, coreDataStore: coreDataStore)
+        let moduleDependency =  ModuleDependency(localService: localService, coreDataStore: coreDataStore)
+        let appBuilder = AppBuilder(moduleDependency: moduleDependency)
         window?.rootViewController = appBuilder.build()
         return true
     }

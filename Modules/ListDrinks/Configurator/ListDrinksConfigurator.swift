@@ -18,23 +18,26 @@ class ListDrinksModuleConfigurator {
         self.appBuilderDelegate = appBuilderDelegate
     }
     
-    func configureModuleForViewInput<UIViewController>(viewInput: UIViewController) {
-
-        guard let viewController = viewInput as? ListDrinksViewController else { return }
+    func configure() -> UIViewController {
+        let listDrinksStoryboard = UIStoryboard(name: "ListDrinks", bundle: nil)
+        let listDrinksNavigationController = listDrinksStoryboard.instantiateViewController(withIdentifier: "ListDrinksNavigationController") as! UINavigationController
+        let listDrinksView = listDrinksNavigationController.viewControllers[0] as! ListDrinksViewController
         
         let router = ListDrinksRouter()
-        router.sourceView = viewController
+        router.sourceView = listDrinksView
         router.appBuilderDelegate = appBuilderDelegate
         
         let presenter = ListDrinksPresenter()
-        presenter.view = viewController
+        presenter.view = listDrinksView
         presenter.router = router
         
         let interactor = ListDrinksInteractor()
         interactor.output = presenter
         interactor.remoteService = moduleDependency.remoteService
         presenter.interactor = interactor
-        viewController.output = presenter
+        listDrinksView.output = presenter
+        
+        return listDrinksNavigationController
     }
 
 }

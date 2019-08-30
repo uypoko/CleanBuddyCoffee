@@ -18,22 +18,25 @@ class SetAddressOnMapModuleConfigurator {
         self.appBuilderDelegate = appBuilderDelegate
     }
 
-    func configureModuleForViewInput<UIViewController>(viewInput: UIViewController) {
-        guard let viewController = viewInput as? SetAddressOnMapViewController else { return }
+    func configure() -> UIViewController {
+        let storyboard = UIStoryboard(name: "SetAddressOnMap", bundle: nil)
+        let view = storyboard.instantiateViewController(withIdentifier: "SetAddressOnMapViewController") as! SetAddressOnMapViewController
         
         let router = SetAddressOnMapRouter()
-        router.sourceView = viewController
+        router.sourceView = view
         router.appBuilderDelegate = appBuilderDelegate
         
         let presenter = SetAddressOnMapPresenter()
-        presenter.view = viewController
+        presenter.view = view
         presenter.router = router
         
         let interactor = SetAddressOnMapInteractor()
         interactor.output = presenter
         
         presenter.interactor = interactor
-        viewController.output = presenter
+        view.output = presenter
+        
+        return view
     }
 
 }

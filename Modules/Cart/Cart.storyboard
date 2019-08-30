@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AYh-EB-xaG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oMi-GD-Hlr">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -79,10 +79,34 @@
                             <outlet property="delegate" destination="AYh-EB-xaG" id="aKp-97-EgE"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="jKF-sY-PxU"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fhy-QB-2nP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="166" y="62"/>
+            <point key="canvasLocation" x="1075.3623188405797" y="61.607142857142854"/>
+        </scene>
+        <!--Cart-->
+        <scene sceneID="wGh-h0-oiC">
+            <objects>
+                <navigationController storyboardIdentifier="CartNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="oMi-GD-Hlr" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Cart" image="baseline_shopping_cart_black_36pt" id="YI9-Tz-K51"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PZB-H8-9rL">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="AYh-EB-xaG" kind="relationship" relationship="rootViewController" id="Q4K-Ix-RNz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q67-sO-Clx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="165.21739130434784" y="61.607142857142854"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="baseline_shopping_cart_black_36pt" width="36" height="36"/>
+    </resources>
 </document>

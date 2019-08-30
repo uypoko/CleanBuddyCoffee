@@ -6,10 +6,10 @@
 //  Copyright © 2019 Daylighter. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol AppBuilderDelegate {
-    func configureDrinkDetailModule(drinkId: String) -> DrinkDetailViewController
-    func configureEnterDeliveryAddressModule() -> DeliveryAddressViewController
-    func configureSetAddressOnMapModule() -> SetAddressOnMapViewController
+    func configureDrinkDetailModule(drinkId: String) -> UIViewController
+    func configureEnterDeliveryAddressModule() -> UIViewController
+    func configureSetAddressOnMapModule() -> UIViewController
 }
