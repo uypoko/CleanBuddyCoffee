@@ -42,4 +42,3 @@ $ pod install
 * [Firebase](https://firebase.google.com/) - The back end
 ## Acknowledgments
 * [Validators](https://github.com/Arrlindii/AAValidators) - Form Validation
-* [Multiple Storyboards](https://medium.com/@gurdeep060289/clean-code-for-multiple-storyboards-c64eb679dbf6)
