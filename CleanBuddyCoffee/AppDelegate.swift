@@ -15,8 +15,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     let localService = LocalService()
     let coreDataStore = CoreDataStore()
+    
+
+    protocal Provider<T> {
+        func get(): T
+    }
+
+    class DrinkControllerProvider(
+        val serviceProvider: Provider<ServiceAPI>
+    ): Provider<DrinkController> {
+
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        // Injector
+        
         // Override point for customization after application launch.
         FirebaseApp.configure()
         // Restore cart

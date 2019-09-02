@@ -6,12 +6,15 @@
 //  Copyright © 2019 Daylighter. All rights reserved.
 //
 
-class ListDrinksRouter: ListDrinksRouterInput {
+// Naming -> dung lam tu dong.
+class ListDrinksRouter(): ListDrinksRouterInput {
     
+    // Weak?
     weak var sourceView: ListDrinksViewController!
     var appBuilderDelegate: AppBuilderDelegate!
     
     func routeToDrinkDetail(drinkId: String) {
+        // Type?
         let destinationView = appBuilderDelegate.configureDrinkDetailModule(drinkId: drinkId)
         sourceView.navigationController?.pushViewController(destinationView, animated: true)
     }
