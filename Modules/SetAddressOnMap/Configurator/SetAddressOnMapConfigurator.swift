@@ -31,10 +31,10 @@ class SetAddressOnMapModuleConfigurator {
         presenter.router = router
         
         let interactor = SetAddressOnMapInteractor()
-        interactor.output = presenter
+        interactor.presenter = presenter
         
         presenter.interactor = interactor
-        view.output = presenter
+        view.presenter = presenter
         
         return view
     }

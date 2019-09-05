@@ -32,10 +32,10 @@ class ListDrinksModuleConfigurator {
         presenter.router = router
         
         let interactor = ListDrinksInteractor()
-        interactor.output = presenter
+        interactor.presenter = presenter
         interactor.remoteService = moduleDependency.remoteService
         presenter.interactor = interactor
-        listDrinksView.output = presenter
+        listDrinksView.presenter = presenter
         
         return listDrinksNavigationController
     }

@@ -24,7 +24,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let moduleDependency =  ModuleDependency(localService: localService, coreDataStore: coreDataStore)
         let appBuilder = AppBuilder(moduleDependency: moduleDependency)
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = appBuilder.build()
+        window?.makeKeyAndVisible()
         return true
     }
 

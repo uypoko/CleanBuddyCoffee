@@ -29,7 +29,6 @@
 		940D4672230AD47E00F20C22 /* CartItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940D4671230AD47E00F20C22 /* CartItemCell.swift */; };
 		941847B42313C67600C94FB6 /* ModuleDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941847B32313C67600C94FB6 /* ModuleDependency.swift */; };
 		941847B62313DC9100C94FB6 /* AppBuilderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941847B52313DC9100C94FB6 /* AppBuilderDelegate.swift */; };
-		9451813B23140D6500E1706D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9490DD4F230570B9006A03E8 /* Main.storyboard */; };
 		9451813C23140D9000E1706D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9490DD28230567D2006A03E8 /* GoogleService-Info.plist */; };
 		9451813D23140DA900E1706D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9490DD1D230566A8006A03E8 /* Assets.xcassets */; };
 		9451813E23140DB000E1706D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9490DD1F230566A8006A03E8 /* LaunchScreen.storyboard */; };
@@ -53,7 +52,6 @@
 		9490DD4723056F4C006A03E8 /* ListDrinksRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9490DD3B23056F4C006A03E8 /* ListDrinksRouterInput.swift */; };
 		9490DD4823056F4C006A03E8 /* ListDrinksRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9490DD3C23056F4C006A03E8 /* ListDrinksRouter.swift */; };
 		9490DD52230570B9006A03E8 /* AppBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9490DD4D230570B9006A03E8 /* AppBuilder.swift */; };
-		9490DD53230570B9006A03E8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9490DD4E230570B9006A03E8 /* MainViewController.swift */; };
 		9490DD5923057411006A03E8 /* ListDrinksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9490DD5823057411006A03E8 /* ListDrinksModel.swift */; };
 		94B58B572313FE9C00534D7C /* CoreDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B58B562313FE9C00534D7C /* CoreDataStore.swift */; };
 		94DC729C230FD688006E814E /* SetAddressOnMapPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DC728C230FD688006E814E /* SetAddressOnMapPresenter.swift */; };
@@ -147,8 +145,6 @@
 		9490DD3B23056F4C006A03E8 /* ListDrinksRouterInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListDrinksRouterInput.swift; sourceTree = "<group>"; };
 		9490DD3C23056F4C006A03E8 /* ListDrinksRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListDrinksRouter.swift; sourceTree = "<group>"; };
 		9490DD4D230570B9006A03E8 /* AppBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppBuilder.swift; sourceTree = "<group>"; };
-		9490DD4E230570B9006A03E8 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		9490DD50230570B9006A03E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9490DD56230572E6006A03E8 /* ListDrinks.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListDrinks.storyboard; sourceTree = "<group>"; };
 		9490DD5823057411006A03E8 /* ListDrinksModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDrinksModel.swift; sourceTree = "<group>"; };
 		94B58B562313FE9C00534D7C /* CoreDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStore.swift; sourceTree = "<group>"; };
@@ -469,8 +465,6 @@
 			children = (
 				9490DD4D230570B9006A03E8 /* AppBuilder.swift */,
 				941847B52313DC9100C94FB6 /* AppBuilderDelegate.swift */,
-				9490DD4E230570B9006A03E8 /* MainViewController.swift */,
-				9490DD4F230570B9006A03E8 /* Main.storyboard */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -587,8 +581,8 @@
 		94DC72C1230FD8AF006E814E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				94DC72C2230FD8AF006E814E /* DeliveryAddressViewInput.swift */,
 				94DC72C3230FD8AF006E814E /* DeliveryAddressViewController.swift */,
+				94DC72C2230FD8AF006E814E /* DeliveryAddressViewInput.swift */,
 				94DC72C4230FD8AF006E814E /* DeliveryAddressViewOutput.swift */,
 			);
 			path = View;
@@ -803,7 +797,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9451814123140E2600E1706D /* DrinkDetail.storyboard in Resources */,
-				9451813B23140D6500E1706D /* Main.storyboard in Resources */,
 				9451814423140E4200E1706D /* SetAddressOnMap.storyboard in Resources */,
 				9451814023140E1C00E1706D /* ListDrinks.storyboard in Resources */,
 				9451814323140E3200E1706D /* DeliveryAddress.storyboard in Resources */,
@@ -881,7 +874,6 @@
 				A4A4F5F323143A750033C5AF /* UserManagementRouterInput.swift in Sources */,
 				94B58B572313FE9C00534D7C /* CoreDataStore.swift in Sources */,
 				9490DD3F23056F4C006A03E8 /* ListDrinksViewOutput.swift in Sources */,
-				9490DD53230570B9006A03E8 /* MainViewController.swift in Sources */,
 				9490DD3D23056F4C006A03E8 /* ListDrinksModuleInput.swift in Sources */,
 				940D4665230AD1D700F20C22 /* CartConfigurator.swift in Sources */,
 				94DC72B8230FD7A7006E814E /* RemoteServiceProtocol.swift in Sources */,
@@ -963,14 +955,6 @@
 				9490DD20230566A8006A03E8 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		9490DD4F230570B9006A03E8 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9490DD50230570B9006A03E8 /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

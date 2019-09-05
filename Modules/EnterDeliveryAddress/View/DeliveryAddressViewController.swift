@@ -10,7 +10,7 @@ import UIKit
 
 class DeliveryAddressViewController: UIViewController {
 
-    var output: DeliveryAddressViewOutput!
+    var presenter: DeliveryAddressViewOutput!
 
     // MARK: IBOutlets
     @IBOutlet weak var emailField: UITextField!
@@ -23,7 +23,7 @@ class DeliveryAddressViewController: UIViewController {
     // MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        output.viewIsReady()
+        presenter.viewIsReady()
         setupInitialState()
     }
 
@@ -44,7 +44,7 @@ class DeliveryAddressViewController: UIViewController {
             let alert = UIAlertController(title: "Confirm Order", message: nil, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Submit", style: .default) { _ in
                 self.startActivityIndicator()
-                self.output.placeOrderButtonTapped(email: email, name: name, phone: phone, address: address)
+                self.presenter.placeOrderButtonTapped(email: email, name: name, phone: phone, address: address)
             })
             alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
             present(alert, animated: true, completion: nil)
@@ -54,7 +54,7 @@ class DeliveryAddressViewController: UIViewController {
     }
     
     @IBAction func setAddressOnMapButtonTapped(_ sender: Any) {
-        output.setAddressOnMapButtonTapped()
+        presenter.setAddressOnMapButtonTapped()
     }
     
     // MARK: View setups
@@ -75,7 +75,7 @@ extension DeliveryAddressViewController: DeliveryAddressViewInput {
     func displaySuccessOrderMessage() {
         stopActivityIndicator()
         showAlert(message: "Place order successfully!") { _ in
-            self.output.didShowOrderSuccessMessage()
+            self.presenter.didShowOrderSuccessMessage()
         }
     }
     

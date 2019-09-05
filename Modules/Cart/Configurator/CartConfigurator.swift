@@ -32,12 +32,12 @@ class CartModuleConfigurator {
         presenter.router = router
         
         let interactor = CartInteractor()
-        interactor.output = presenter
+        interactor.presenter = presenter
         interactor.localService = moduleDependency.localService
         interactor.remoteService = moduleDependency.remoteService
         
         presenter.interactor = interactor
-        cartView.output = presenter
+        cartView.presenter = presenter
         
         return cartNavigationController
     }

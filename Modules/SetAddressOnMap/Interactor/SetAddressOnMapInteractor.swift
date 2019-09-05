@@ -8,6 +8,6 @@
 
 class SetAddressOnMapInteractor: SetAddressOnMapInteractorInput {
 
-    weak var output: SetAddressOnMapInteractorOutput!
+    weak var presenter: SetAddressOnMapInteractorOutput!
 
 }

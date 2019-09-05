@@ -10,14 +10,14 @@ import UIKit
 
 class ListDrinksViewController: UITableViewController {
 
-    var output: ListDrinksViewOutput!
+    var presenter: ListDrinksViewOutput!
     private var drinks: [ListDrinks.DrinkViewModel] = []
     private var imageDictionary: [String: IndexPath] = [:]
 
     // MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        output.viewIsReady()
+        presenter.viewIsReady()
     }
     
     // MARK: Tableview data source
@@ -35,7 +35,7 @@ class ListDrinksViewController: UITableViewController {
         let drink = drinks[indexPath.row]
         cell.updateUI(withDrink: drink)
         imageDictionary[drink.name] = indexPath
-        output.drinkCellDequeued(drinkName: drink.name)
+        presenter.drinkCellDequeued(drinkName: drink.name)
         return cell
     }
     
@@ -47,7 +47,7 @@ class ListDrinksViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let drink = drinks[indexPath.row]
-        output.didSelectRow(drinkId: drink.id)
+        presenter.didSelectRow(drinkId: drink.id)
         tableView.deselectRow(at: indexPath, animated: true)
     }
     

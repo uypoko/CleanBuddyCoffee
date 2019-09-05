@@ -17,8 +17,7 @@ class AppBuilder {
     }
     
     func build() -> UIViewController {
-        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let mainTabBarView = mainStoryboard.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
+        let mainTabBarView: UITabBarController = UITabBarController()
         
         // Home Tab
         let listDrinksConfigurator = ListDrinksModuleConfigurator(moduleDependency: moduleDependency, appBuilderDelegate: self)

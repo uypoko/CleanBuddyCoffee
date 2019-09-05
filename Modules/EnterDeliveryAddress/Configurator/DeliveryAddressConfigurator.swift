@@ -31,12 +31,12 @@ class DeliveryAddressModuleConfigurator {
         presenter.router = router
         
         let interactor = DeliveryAddressInteractor()
-        interactor.output = presenter
+        interactor.presenter = presenter
         interactor.localService = moduleDependency.localService
         interactor.remoteService = moduleDependency.remoteService
         
         presenter.interactor = interactor
-        view.output = presenter
+        view.presenter = presenter
         
         return view
     }

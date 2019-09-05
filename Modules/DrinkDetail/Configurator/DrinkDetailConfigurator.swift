@@ -32,14 +32,14 @@ class DrinkDetailModuleConfigurator {
         presenter.router = router
         
         let interactor = DrinkDetailInteractor()
-        interactor.output = presenter
+        interactor.presenter = presenter
         let remoteService = moduleDependency.remoteService
         interactor.remoteService = remoteService
         let localService =  moduleDependency.localService
         interactor.localService =  localService
         
         presenter.interactor = interactor
-        view.output = presenter
+        view.presenter = presenter
         
         return view
     }

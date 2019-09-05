@@ -8,14 +8,14 @@
 
 class DrinkDetailInteractor: DrinkDetailInteractorInput {
 
-    weak var output: DrinkDetailInteractorOutput!
+    weak var presenter: DrinkDetailInteractorOutput!
     var localService: LocalServiceProtocol!
     var remoteService: RemoteServiceProtocol?
     
     func fetchDrink(drinkId: String) {
         remoteService?.fetchDrink(for: drinkId) { [weak self] drink in
             if let drink = drink {
-                self?.output.didFetchDrink(drink: drink)
+                self?.presenter.didFetchDrink(drink: drink)
             }
         }
     }
@@ -23,7 +23,7 @@ class DrinkDetailInteractor: DrinkDetailInteractorInput {
     func fetchDrinkImage(drinkId: String) {
         remoteService?.fetchDrinkDetailImage(drinkId: drinkId) { [weak self] data in
             if let data = data {
-                self?.output.didFetchDrinkImage(data: data)
+                self?.presenter.didFetchDrinkImage(data: data)
             }
         }
     }

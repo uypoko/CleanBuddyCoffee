@@ -10,7 +10,7 @@ import UIKit
 
 class DrinkDetailViewController: UIViewController {
 
-    var output: DrinkDetailViewOutput!
+    var presenter: DrinkDetailViewOutput!
     var drinkId: String?
 
     // MARK: IBOutlets
@@ -28,7 +28,7 @@ class DrinkDetailViewController: UIViewController {
         descriptionLabel.text = ""
         priceLabel.text = ""
         if let drinkId = drinkId {
-            output.viewIsReady(drinkId: drinkId)
+            presenter.viewIsReady(drinkId: drinkId)
         }
     }
 
@@ -45,7 +45,7 @@ class DrinkDetailViewController: UIViewController {
             sender.transform = CGAffineTransform(scaleX: 3.0, y: 3.0)
             sender.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
         }
-        output.addToCartButtonTapped(drinkId: drinkId, quantity: quantity)
+        presenter.addToCartButtonTapped(drinkId: drinkId, quantity: quantity)
     }
     
 }

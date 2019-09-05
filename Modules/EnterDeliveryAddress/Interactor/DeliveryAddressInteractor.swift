@@ -8,7 +8,7 @@
 
 class DeliveryAddressInteractor: DeliveryAddressInteractorInput {
 
-    weak var output: DeliveryAddressInteractorOutput!
+    weak var presenter: DeliveryAddressInteractorOutput!
     var localService: LocalServiceProtocol!
     var remoteService: RemoteServiceProtocol?
     
@@ -18,9 +18,9 @@ class DeliveryAddressInteractor: DeliveryAddressInteractorInput {
         let items = localService.getCartItems()
         remoteService?.placeOrder(customer: customer, items: items) { [unowned self] error in
             if let error = error {
-                self.output.failedPlaceOrder(error: error)
+                self.presenter.failedPlaceOrder(error: error)
             } else {
-                self.output.didPlaceOrder()
+                self.presenter.didPlaceOrder()
                 self.localService.removeCartItems()
             }
         }

@@ -16,7 +16,7 @@ class SetAddressOnMapViewController: UIViewController, SetAddressOnMapViewInput 
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var addressLabel: UILabel!
     
-    var output: SetAddressOnMapViewOutput!
+    var presenter: SetAddressOnMapViewOutput!
 
     let locationManager = CLLocationManager()
     let regionInMeters: Double = 10000

@@ -8,23 +8,23 @@
 
 class CartInteractor: CartInteractorInput {
 
-    weak var output: CartInteractorOutput!
+    weak var presenter: CartInteractorOutput!
     var remoteService: RemoteServiceProtocol?
     var localService: LocalServiceProtocol!
     
     func getCartItems() {
         let cartItems = localService.getCartItems()
-        output.didFetchCartItems(items: cartItems)
+        presenter.didFetchCartItems(items: cartItems)
     }
     
     func deleteItem(id: String) {
         localService.removeItem(drinkId: id)
-        output.didDeleteItem(id: id)
+        presenter.didDeleteItem(id: id)
     }
     
     func changeItemQuantity(itemId: String, quantity: Int) {
         localService.changeItemQuantity(drinkId: itemId, quantity: quantity)
-        output.didChangeItemQuantity(itemId: itemId, quantity: quantity)
+        presenter.didChangeItemQuantity(itemId: itemId, quantity: quantity)
     }
     
 }
