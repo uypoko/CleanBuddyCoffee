@@ -22,6 +22,7 @@ class AppBuilder {
         // Home Tab
         let listDrinksConfigurator = ListDrinksModuleConfigurator(moduleDependency: moduleDependency, appBuilderDelegate: self)
         let listDrinksView = listDrinksConfigurator.configure()
+        
         //Cart Tab
         let cartConfigurator = CartModuleConfigurator(moduleDependency: moduleDependency, appBuilderDelegate: self)
         let cartDrinksView = cartConfigurator.configure()

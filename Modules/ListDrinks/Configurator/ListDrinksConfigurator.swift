@@ -13,7 +13,8 @@ class ListDrinksModuleConfigurator {
     let moduleDependency: ModuleDependency
     let appBuilderDelegate: AppBuilderDelegate
     
-    init(moduleDependency: ModuleDependency, appBuilderDelegate: AppBuilderDelegate) {
+    // only pass what is needed
+    init(moduleDeependency: ModuleDependency, appBuilderDelegate: AppBuilderDelegate) {
         self.moduleDependency = moduleDependency
         self.appBuilderDelegate = appBuilderDelegate
     }
@@ -21,7 +22,10 @@ class ListDrinksModuleConfigurator {
     func configure() -> UIViewController {
         let listDrinksStoryboard = UIStoryboard(name: "ListDrinks", bundle: nil)
         let listDrinksNavigationController = listDrinksStoryboard.instantiateViewController(withIdentifier: "ListDrinksNavigationController") as! UINavigationController
-        let listDrinksView = listDrinksNavigationController.viewControllers[0] as! ListDrinksViewController
+        
+        // type
+        // What huy?
+        let listDrinksView: ListDrinksViewController = listDrinksNavigationController.viewControllers[0] as! ListDrinksViewController
         
         let router = ListDrinksRouter()
         router.sourceView = listDrinksView
